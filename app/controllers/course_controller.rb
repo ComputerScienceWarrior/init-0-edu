@@ -1,5 +1,5 @@
 class CourseController < ApplicationController
-    before_action :find_student, only: [:show, :edit, :delete]
+    before_action :find_course, only: [:show, :edit, :delete]
 
     def index
         @courses = Course.all
@@ -39,8 +39,8 @@ class CourseController < ApplicationController
         params.require(:course).permit(:title, :description, :duration, :rating, :teacher_id)
     end
 
-    def find_student
-        @student = Student.find(params[:id])
+    def find_course
+        @course = Course.find(params[:id])
     end
 
 end

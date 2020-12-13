@@ -3,5 +3,5 @@ class Student < ApplicationRecord
     has_many :comments, through: :courses
     has_many :comments
     has_secure_password
-    validates_presence_of :firstname, :lastname, :username, :email, :password
+    validates_presence_of :firstname, :lastname, :username, :email, :password_digest
 end
