@@ -1,21 +1,21 @@
 class CourseController < ApplicationController
-    before_action :find_topic, only: [:show, :edit, :delete]
+    before_action :find_comment, only: [:show, :edit, :delete]
 
     def index
-        @topics = Topic.all
+        @comments = Comment.all
     end
 
     def show
     end
 
     def new
-        @topic = Topic.new
+        @comment = Comment.new
     end
 
     def create
-        @topic = Topic.create(topic_params)
-        if @topic
-            redirect_to topic_path(@topic)
+        @comment = Comment.create(comment_params)
+        if @comment
+            redirect_to comment_path(@comment)
         else
             render :new
         end
@@ -36,7 +36,7 @@ class CourseController < ApplicationController
     private
 
     def topic_params
-        params.require(:topic).permit(:title, :description, :course_id)
+        params.require(:topic).permit(:content, :edited_at, :student_id, :course_id)
     end
 
     def find_topic
