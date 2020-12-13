@@ -1,4 +1,4 @@
-class StudentController < ApplicationController
+class StudentsController < ApplicationController
     before_action :find_student, only: [:show, :edit, :delete]
 
     def index

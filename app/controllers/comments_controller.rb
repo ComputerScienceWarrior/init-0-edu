@@ -1,4 +1,4 @@
-class CourseController < ApplicationController
+class CommentsController < ApplicationController
     before_action :find_comment, only: [:show, :edit, :delete]
 
     def index
@@ -35,12 +35,12 @@ class CourseController < ApplicationController
 
     private
 
-    def topic_params
-        params.require(:topic).permit(:content, :edited_at, :student_id, :course_id)
+    def comment_params
+        params.require(:comment).permit(:content, :edited_at, :student_id, :course_id)
     end
 
-    def find_topic
-        @topic = Topic.find(params[:id])
+    def find_comment
+        @comment = Comment.find(params[:id])
     end
 
 end
