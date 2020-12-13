@@ -2,14 +2,14 @@ class StudentController < ApplicationController
     before_action :find_student, only: [:show, :edit, :delete]
 
     def index
-        @students = Course.all
+        @students = Student.all
     end
 
     def show
     end
 
     def new
-        @student = Course.new
+        @student = Student.new
     end
 
     def create
