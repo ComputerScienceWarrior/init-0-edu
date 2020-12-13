@@ -6,7 +6,6 @@ class CreateCourses < ActiveRecord::Migration[6.0]
       t.string :duration
       t.integer :rating
       t.integer :teacher_id
-      t.integer :subject_id
 
       t.timestamps
     end

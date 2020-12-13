@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_12_200213) do
+ActiveRecord::Schema.define(version: 2020_12_13_150018) do
 
   create_table "comments", force: :cascade do |t|
     t.text "content"
@@ -27,7 +27,6 @@ ActiveRecord::Schema.define(version: 2020_12_12_200213) do
     t.string "duration"
     t.integer "rating"
     t.integer "teacher_id"
-    t.integer "subject_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -43,18 +42,20 @@ ActiveRecord::Schema.define(version: 2020_12_12_200213) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "subjects", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "teachers", force: :cascade do |t|
     t.string "firstname"
     t.string "lastname"
     t.string "username"
     t.string "password_digest"
     t.integer "room_no"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "topics", force: :cascade do |t|
+    t.string "title"
+    t.text "description"
+    t.integer "course_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

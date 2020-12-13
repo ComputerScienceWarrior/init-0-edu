@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   resources :students, only: [:index, :show, :new, :create, :edit, :update, :delete, :destroy] 
   resources :teachers, only: [:index, :show, :new, :create, :edit, :update, :delete, :destroy]
   resources :courses, only: [:index, :show, :new, :create, :edit, :update, :delete, :destroy]
-  resources :subjects, only: [:index]
+  resources :topics, only: [:index, :show, :new, :create, :edit, :update, :delete, :destroy]
   resources :comments, only: [:index, :show, :new, :create, :edit, :update, :delete, :destroy]
   root 'static#home'
 end
