@@ -3,5 +3,5 @@ class Course < ApplicationRecord
     has_many :comments, through: :students
     has_many :topics
     belongs_to :teacher
-    validates_presence_of :title, :description, :teacher_id,  :subject_id
+    validates_presence_of :title, :description, :teacher_id
 end
