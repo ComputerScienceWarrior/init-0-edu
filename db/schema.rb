@@ -46,6 +46,7 @@ ActiveRecord::Schema.define(version: 2020_12_13_150018) do
     t.string "firstname"
     t.string "lastname"
     t.string "username"
+    t.string "email"
     t.string "password_digest"
     t.integer "room_no"
     t.datetime "created_at", precision: 6, null: false
