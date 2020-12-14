@@ -1,5 +1,5 @@
-<h1><%= @students.each do |student| %></h1>
+<h1><%= @students.each.with_index(1) do |student, i| %></h1>
     <p>
-        <%= link_to student.username, student_path(student) %>
+        <%= link_to student.username, student_path(student), id: "student-#{i}" %>
     </p>
 <% end %>

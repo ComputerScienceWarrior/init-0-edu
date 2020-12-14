@@ -7,11 +7,12 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'students/index' %>
     <link type="text/css" rel="stylesheet" href="stylesheets/students/index.css">
-    <link type="text/css" rel="stylesheet" href="stylesheets/teachers/index.css">
+    <%# <link type="text/css" rel="stylesheet" href="stylesheets/teachers/index.css">
     <link type="text/css" rel="stylesheet" href="stylesheets/courses/index.css">
     <link type="text/css" rel="stylesheet" href="stylesheets/topics/index.css">
-    <link type="text/css" rel="stylesheet" href="stylesheets/comments/index.css">
+    <link type="text/css" rel="stylesheet" href="stylesheets/comments/index.css"> %>
   </head>
 
   <body>
@@ -23,4 +24,5 @@
     </nav>
     <%= yield %>
   </body>
+
 </html>
