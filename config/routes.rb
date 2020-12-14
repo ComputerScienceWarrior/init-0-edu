@@ -7,5 +7,7 @@ Rails.application.routes.draw do
   end
   resources :topics, only: [:index, :show, :new, :create, :edit, :update, :delete, :destroy]
   resources :comments, only: [:index, :show, :new, :create, :edit, :update, :delete, :destroy]
+  get "/login", to: "sessions#new"
+  get "/login", to: "sessions#create"
   root 'static#home'
 end
