@@ -21,6 +21,10 @@
      padding: 10px 5px;
  }
 
+ #student-1{
+     background-color: red;
+ }
+
  #nav-bar ul li{
     list-style-type: none;
 }
