@@ -1,17 +1,7 @@
 
-5.times do |i|
-    Student.create(firstname: "Student-#{i}", lastname: "Lasty#{i}", username: "super-student-#{i}", email: "student_#{i}@jamesmail.com", password: "pass123")
-end
+student = Student.create!(firstname: "James", lastname: "Stampley", username: "username", email: "james@gmail.com", password: "pass123")
+teacher = Teacher.create!(firstname: "Mark", lastname: "Robinson", username: "superteacher91", email: "robinson@teacher.edu", password: "pass123")
+course = Course.create!(title: "Data Structures and Algorithms", description: "This course is going to teach you all the basics of DS and Algorithms!", teacher_id: 1)
+topic = Topic.create!(title: "Arrays Pt.1", description: "This course will cover the S/T complexity of the Array DS.", course_id: 1)
 
-2.times do |i|
-    Teacher.create(firstname: "Teacher-#{i}", lastname: "Lasty#{i}", username: "super-teacher-#{i}", email: "teacher_#{i}@jamesmail.edu", password: "pass123")
-end
-
-1.times do |i|
-    Course.create(title: "course-#{i}", description: "This course is going to teach you all the basics!", teacher_id: 1)
-end
-
-2.times do |i|
-    Topic.create(title: "Learn to code pt. #{i}", description: "Here is the description on this topic.", course_id: i)
-end
 
