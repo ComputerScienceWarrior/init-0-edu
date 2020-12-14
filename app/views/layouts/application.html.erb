@@ -15,19 +15,10 @@
   </head>
 
   <body>
-    <nav>
+    <nav id="nav-bar">
       <ul>
-        <li>Home</li>
-        <li>Profile</li>
-        <li>Transcript</li>
-        <li>
-          <select>
-            <option value="" selected disabled hidden>Available Courses</option>
-            <option>Course 1</option>
-            <option>Course 2</option>
-            <option>Course 3</option>
-          </select>
-        </li>
+        <li><%= link_to 'Home', root_path %></li>
+        <li>Sign Up / Login</li>
       </ul>
     </nav>
     <%= yield %>
