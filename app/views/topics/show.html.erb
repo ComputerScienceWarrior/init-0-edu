@@ -1,0 +1,6 @@
+<h2>This topic belongs to the <%= @course.title %> course, made by <%= link_to "Professor #{@course.teacher.lastname}", teacher_path(@course.teacher)%></h2>
+<hr>
+<p>
+    <h2><%= @topic.title %></h2>
+    <h3><%= @topic.description %></h3>
+</p>

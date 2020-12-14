@@ -1,5 +1,5 @@
 class TopicsController < ApplicationController
-    before_action :find_topic, only: [:show, :edit, :delete]
+    before_action :find_course_and_topic, only: [:show, :edit, :delete]
 
     def index
         @topics = Topic.all
@@ -39,8 +39,9 @@ class TopicsController < ApplicationController
         params.require(:topic).permit(:title, :description, :course_id)
     end
 
-    def find_topic
+    def find_course_and_topic
         @topic = Topic.find(params[:id])
+        @course = @topic.course
     end
 
 end
