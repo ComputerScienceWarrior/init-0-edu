@@ -1,10 +1,15 @@
 class SessionsController < ApplicationController
-    # def new
-    #     # nothing to do here!
-    # end
- 
-    # def create
-    #     session[:username] = params[:username]
-    #     redirect_to '/'
-    # end
+    def new_student
+        @student = Student.new
+    end
+
+    def create_student
+        binding.pry
+    end
+
+    private 
+
+    def student_login_params
+        params.require(:student).permit(:firstname, :lastname, :username, :password, :email)
+    end
 end
