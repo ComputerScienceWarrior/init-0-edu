@@ -13,7 +13,7 @@ Rails.application.routes.draw do
  
   resources :sessions, only: [:new, :create, :destroy]
 
-  get "/login", to: "sessions#new"
-
+  get "/login", to: "sessions#new_student"
+  post "/login", to: "sessions#create_student"
   root 'static#home'
 end

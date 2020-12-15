@@ -1,5 +1,6 @@
-<%= form_for @student do |f| %>
-    Enter your username: <%= f.text_field :username  %> <br><br>
-    Enter your password: <%= f.password_field :password %><br><br>
-    <%= f.submit%>
+<h2>Login</h2>
+<%= form_tag '/login' do %>
+    Enter your username: <%= text_field_tag :username  %> <br><br>
+    Enter your password: <%= password_field_tag :password %><br><br>
+    <%= submit_tag "Login" %>
 <% end %>
