@@ -4,7 +4,13 @@ class SessionsController < ApplicationController
     end
 
     def create_student
-        binding.pry
+        @student =  Student.find_by(username: params[:username])
+        if @student
+            session[:student_id] = @student.id
+            redirect_to student_path(@student)
+        else
+            redirect_to '/login'
+        end
     end
 
     private 
