@@ -11,9 +11,10 @@ Rails.application.routes.draw do
   resources :topics, only: [:index, :show, :new, :create, :edit, :update, :delete, :destroy]
   resources :comments, only: [:index, :show, :new, :create, :edit, :update, :delete, :destroy]
  
-  resources :sessions, only: [:new, :create, :destroy]
+  resources :sessions, only: [:new, :create, :delete, :destroy]
 
   get "/login", to: "sessions#new_student"
-  post "/login", to: "sessions#create_student"
+  post "/login", to: "sessions#student_login"
+  get "/logout", to: "sessions#logout"
   root 'static#home'
 end
