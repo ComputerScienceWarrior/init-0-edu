@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  resources :students, only: [:index, :show, :new, :create, :edit, :update, :delete, :destroy] 
+  resources :students, only: [:index, :show, :create, :edit, :update, :delete, :destroy] 
+  get "/signup", to: "students#new"
+  post "/signup", to: "students#new"
+  
   resources :teachers, only: [:index, :show, :new, :create, :edit, :update, :delete, :destroy]
 
   #nested attribute to create a topic when a new course is created
@@ -15,6 +18,6 @@ Rails.application.routes.draw do
 
   get "/login", to: "sessions#new_student"
   post "/login", to: "sessions#student_login"
-  get "/logout", to: "sessions#logout"
+  get "/logout", to: "sessions#destroy"
   root 'static#home'
 end

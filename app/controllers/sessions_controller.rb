@@ -5,7 +5,7 @@ class SessionsController < ApplicationController
 
     def student_login
         @student =  Student.find_by(username: params[:username])
-        if @student
+        if @student && @student.authenticate(params[:password])
             session[:student_id] = @student.id
             redirect_to student_path(@student)
         else
@@ -13,8 +13,8 @@ class SessionsController < ApplicationController
         end
     end
 
-    def logout
-        session.clear
+    def destroy
+        reset_session
         redirect_to root_path
     end
 
