@@ -3,7 +3,7 @@ class SessionsController < ApplicationController
         @student = Student.new
     end
 
-    def create_student
+    def student_login
         @student =  Student.find_by(username: params[:username])
         if @student
             session[:student_id] = @student.id
@@ -13,9 +13,9 @@ class SessionsController < ApplicationController
         end
     end
 
-    private 
-
-    def student_login_params
-        params.require(:student).permit(:firstname, :lastname, :username, :password, :email)
+    def logout
+        session.clear
+        redirect_to root_path
     end
+
 end

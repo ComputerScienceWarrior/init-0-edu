@@ -19,7 +19,11 @@
     <nav id="nav-bar">
       <ul>
         <li><%= link_to 'Home', root_path %></li>
-        <li>Sign Up / Login</li>
+        <% if logged_in_student? || logged_in_teacher? %>
+          <li><%= link_to "Logout", logout_path%></li>
+        <% else %>
+          <li><%= button_tag "Signup", sig%> / <%= button_to "Login", login_path %></li>
+        <% end %>
       </ul>
     </nav>
     <%= yield %>
