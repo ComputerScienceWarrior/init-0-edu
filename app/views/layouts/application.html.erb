@@ -18,13 +18,11 @@
   <body>
     <nav id="nav-bar">
       <ul>
-        <li><%= link_to 'Home', root_path %></li>
         <% if logged_in_student?%>
           <li><%= link_to "Logout", logout_path%></li>
         <% else %>
-          <li> 
-            <%= link_to "Student Login", login_path, id: "student-login-btn" %>
-          </li>
+          <li><%= link_to 'Sign Up', root_path %></li>
+          <li> <%= link_to "Student Login", login_path, id: "student-login-btn" %></li>
         <% end %>
       </ul>
     </nav>
