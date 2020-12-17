@@ -22,8 +22,7 @@
         <% if logged_in_student?%>
           <li><%= link_to "Logout", logout_path%></li>
         <% else %>
-          <li>
-            <%= button_to "Signup", signup_path, id: "sign-up-btn" %> / 
+          <li> 
             <%= link_to "Student Login", login_path, id: "student-login-btn" %>
           </li>
         <% end %>
