@@ -17,5 +17,5 @@ Rails.application.routes.draw do
   resources :topics, only: [:index, :show, :new, :create, :edit, :update, :delete, :destroy]
   resources :comments, only: [:index, :show, :new, :create, :edit, :update, :delete, :destroy]
  
-  root 'static#home'
+  root 'students#new'
 end
