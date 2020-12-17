@@ -7,7 +7,7 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'students/index' %>
+    <%= javascript_pack_tag 'students/dashboard' %>
     <link type="text/css" rel="stylesheet" href="stylesheets/students/index.css">
     <%# <link type="text/css" rel="stylesheet" href="stylesheets/teachers/index.css">
     <link type="text/css" rel="stylesheet" href="stylesheets/courses/index.css">
@@ -19,13 +19,12 @@
     <nav id="nav-bar">
       <ul>
         <li><%= link_to 'Home', root_path %></li>
-        <% if logged_in_student? || logged_in_teacher? %>
+        <% if logged_in_student?%>
           <li><%= link_to "Logout", logout_path%></li>
         <% else %>
           <li>
             <%= button_to "Signup", signup_path, id: "sign-up-btn" %> / 
-            <%= link_to "Student Login", login_path, id: "student-login-btn" %> / 
-            <%= link_to "Teacher Login", login_path, id: "teacher-login-btn"%>
+            <%= link_to "Student Login", login_path, id: "student-login-btn" %>
           </li>
         <% end %>
       </ul>
