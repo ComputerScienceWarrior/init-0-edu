@@ -3,6 +3,5 @@ class Course < ApplicationRecord
     accepts_nested_attributes_for :topics
     has_many :students, through: :comments
     has_many :comments, through: :students
-    belongs_to :teacher
-    validates_presence_of :title, :description, :teacher_id
+    validates_presence_of :title, :description
 end

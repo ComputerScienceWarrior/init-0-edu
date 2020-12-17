@@ -29,7 +29,6 @@ ActiveRecord::Schema.define(version: 2020_12_13_150018) do
     t.text "description"
     t.string "duration"
     t.integer "rating"
-    t.integer "teacher_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -41,17 +40,6 @@ ActiveRecord::Schema.define(version: 2020_12_13_150018) do
     t.string "email"
     t.string "password_digest"
     t.integer "gpa"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "teachers", force: :cascade do |t|
-    t.string "firstname"
-    t.string "lastname"
-    t.string "username"
-    t.string "email"
-    t.string "password_digest"
-    t.integer "room_no"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
