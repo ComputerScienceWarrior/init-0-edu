@@ -6,11 +6,11 @@ class StudentsController < ApplicationController
     end
 
     def show
+        render_student_dashboard
     end
 
     def new
         @student = Student.new
-        
         if logged_in_student?
             redirect_to student_path(current_student)
         end
@@ -27,6 +27,7 @@ class StudentsController < ApplicationController
     end
 
     def edit
+        render_student_dashboard
     end
 
     def update
@@ -47,6 +48,10 @@ class StudentsController < ApplicationController
 
     def find_student
         @student = Student.find(session[:student_id])
+    end
+
+    def render_student_dashboard
+        render :layout => "dashboard"
     end
 
 end

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Learning Dashboard</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'students/dashboard' %>
+    <link type="text/css" rel="stylesheet" href="stylesheets/students/index.css">
+    <link rel="icon" href="images/logo-icon" type="image/icon type">
+  </head>
+
+  <body>
+
+    <h1>Welcome, <%= current_student.username%></h1>
+    
+    <nav id="nav-bar">
+      <ul>
+        <li>Courses</li>
+        <li>Profile</li>
+        <li>Transcript</li>
+        <li>Resources</li>
+      </ul>
+    </nav>
+    <%= yield %>
+  </body>
+
+</html>
