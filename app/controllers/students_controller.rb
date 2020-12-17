@@ -1,5 +1,5 @@
 class StudentsController < ApplicationController
-    before_action :find_student, only: [:show, :edit, :delete]
+    before_action :find_student, only: [:show, :edit, :update, :destroy]
 
     def index
         @students = Student.all
@@ -10,6 +10,10 @@ class StudentsController < ApplicationController
 
     def new
         @student = Student.new
+        
+        if logged_in_student?
+            redirect_to student_path(current_student)
+        end
     end
 
     def create
@@ -23,15 +27,16 @@ class StudentsController < ApplicationController
     end
 
     def edit
-        
     end
 
     def update
-
+        @student.update(student_params)
+        redirect_to student_path(@student)
     end
 
-    def delete
-
+    def destroy
+        @student.destroy
+        redirect_to root_path
     end
 
     private
@@ -41,7 +46,7 @@ class StudentsController < ApplicationController
     end
 
     def find_student
-        @student = Student.find(params[:id])
+        @student = Student.find(session[:student_id])
     end
 
 end
