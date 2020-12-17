@@ -1,1 +1,4 @@
-<%= render 'form' %>
+<%= render 'form' %><br>
+<%= form_tag student_path(@student.id), method: "delete" do %>
+  <%= submit_tag "Delete Profile" %>
+<% end %>
