@@ -36,3 +36,8 @@
  body{
      text-align: center;
  }
+
+ #student-data-div{
+    display: flex;
+    justify-content: space-evenly;
+ }

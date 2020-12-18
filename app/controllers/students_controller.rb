@@ -5,6 +5,7 @@ class StudentsController < ApplicationController
         #only an admin student can view the students page
         if @student.is_admin
             @students = Student.all
+            render_dashboard
         else
             redirect_to student_path(@student)
         end
