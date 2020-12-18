@@ -68,12 +68,4 @@ class StudentsController < ApplicationController
         @student = Student.find(session[:student_id])
     end
 
-    def render_dashboard
-        if current_student.is_admin
-            render :layout => "admin"
-        else
-            render :layout => "dashboard"
-        end
-    end
-
 end

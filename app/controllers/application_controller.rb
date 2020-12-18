@@ -1,8 +1,7 @@
 class ApplicationController < ActionController::Base
     helper_method :current_student
-    helper_method :current_teacher
     helper_method :logged_in_student?
-    helper_method :logged_in_teacher?
+    helper_method :render_dashboard
     
     def current_student    
         Student.find_by_id(session[:student_id])  
@@ -10,5 +9,13 @@ class ApplicationController < ActionController::Base
 
     def logged_in_student?
         !current_student.nil?  
+    end
+
+    def render_dashboard
+        if current_student.is_admin
+            render :layout => "admin"
+        else
+            render :layout => "dashboard"
+        end
     end
 end
