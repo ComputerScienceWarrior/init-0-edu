@@ -1,0 +1,11 @@
+<h1>All Available Courses:</h1>
+<% @courses.each do |course| %>
+    <p>Course title: <%= link_to course.title, course_path(course) %></p>
+    <p>Course description:<br>
+        <%= course.description %>
+    </p>
+    <%# show edit if user is an admin %>
+    <% if current_student.is_admin %>
+
+    <% end %>
+<% end %>
