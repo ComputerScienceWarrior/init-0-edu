@@ -1,5 +1,5 @@
 class StudentsController < ApplicationController
-    before_action :find_student, only: [:index, :show, :edit, :update, :destroy]
+    before_action :find_student, only: [:index, :edit, :update]
 
     def index
         #only an admin student can view the students page
@@ -12,7 +12,12 @@ class StudentsController < ApplicationController
     end
 
     def show
-        render_dashboard
+        @student = Student.find_by_id(params[:id])
+        if current_student.is_admin
+            render_dashboard
+        else
+            render_dashboard
+        end
     end
 
     def new
@@ -42,8 +47,15 @@ class StudentsController < ApplicationController
     end
 
     def destroy
-        @student.destroy
-        redirect_to root_path
+        @student = Student.find_by_id(params[:id])
+
+        if current_student.is_admin
+            @student.destroy 
+            redirect_to students_path
+        else
+            @student.destroy
+            redirect_to root_path
+        end
     end
 
     private
@@ -57,7 +69,7 @@ class StudentsController < ApplicationController
     end
 
     def render_dashboard
-        if @student.is_admin
+        if current_student.is_admin
             render :layout => "admin"
         else
             render :layout => "dashboard"
