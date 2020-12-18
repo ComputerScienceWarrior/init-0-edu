@@ -1,12 +1,17 @@
 class StudentsController < ApplicationController
-    before_action :find_student, only: [:show, :edit, :update, :destroy]
+    before_action :find_student, only: [:index, :show, :edit, :update, :destroy]
 
     def index
-        @students = Student.all
+        #only an admin student can view the students page
+        if @student.is_admin
+            @students = Student.all
+        else
+            redirect_to student_path(@student)
+        end
     end
 
     def show
-        render_student_dashboard
+        render_dashboard
     end
 
     def new
@@ -27,7 +32,7 @@ class StudentsController < ApplicationController
     end
 
     def edit
-        render_student_dashboard
+        render_dashboard
     end
 
     def update
@@ -50,8 +55,12 @@ class StudentsController < ApplicationController
         @student = Student.find(session[:student_id])
     end
 
-    def render_student_dashboard
-        render :layout => "dashboard"
+    def render_dashboard
+        if @student.is_admin
+            render :layout => "admin"
+        else
+            render :layout => "dashboard"
+        end
     end
 
 end
