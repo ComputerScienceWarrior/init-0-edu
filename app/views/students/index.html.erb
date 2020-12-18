@@ -1,5 +1,8 @@
-<h1><% @students.each.with_index(1) do |student, i| %></h1>
-    <p>
-        <%= link_to student.username, student_path(student), id: "student-#{i}" %>
-    </p>
+<h1><% @students.each do |student| %></h1>
+    <div id="student-data-div">
+        <%= link_to student.username, student_path(student) %>
+        <%= form_tag student_path(student.id), method: "delete" do %>
+            <%= submit_tag "Delete Student" %>
+        <% end %>
+    </div>
 <% end %>
