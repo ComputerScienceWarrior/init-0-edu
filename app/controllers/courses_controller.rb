@@ -3,6 +3,7 @@ class CoursesController < ApplicationController
 
     def index
         @courses = Course.all
+        render_dashboard
     end
 
     def show
