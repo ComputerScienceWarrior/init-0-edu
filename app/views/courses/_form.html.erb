@@ -1,6 +1,7 @@
 <%= form_for @course do |f| %>
     Course Title: <%= f.text_field :title %><br><br>
     Course Description: <%= f.text_area :description %><br><br>
+    EST Duration of course (optional): <%= f.text_field :duration, placeholder: "00hrs:00mins" %>
         <% if params[:action] === "new" %>
             <h2>Create the first topic for your new course!</h2>
             <ul>
