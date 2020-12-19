@@ -7,11 +7,13 @@ class CoursesController < ApplicationController
     end
 
     def show
+        render_dashboard
     end
 
     def new
         @course = Course.new
         @course.topics.build
+        render_dashboard
     end
 
     def create
@@ -24,7 +26,7 @@ class CoursesController < ApplicationController
     end
 
     def edit
-        
+        render_dashboard
     end
 
     def update
