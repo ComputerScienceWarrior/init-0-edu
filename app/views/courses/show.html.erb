@@ -1,0 +1,8 @@
+<h1><%= @course.title %></h1><br>
+
+<%= label_tag "Description of Course:"%><br>
+<%= @course.description %>
+<%= @course.duration %>
+<%= @course.rating %>
+
+<b><%= link_to "Comment on Course", new_comment_path %></b>
