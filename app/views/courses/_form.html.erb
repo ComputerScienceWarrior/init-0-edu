@@ -1,21 +1,20 @@
 <%= form_for @course do |f| %>
     Course Title: <%= f.text_field :title %><br><br>
     Course Description: <%= f.text_area :description %><br><br>
-
-    <h2>Create the first topic for your new course!</h2>
-    <ul>
         <% if params[:action] === "new" %>
-            <%= f.fields_for :topics do |new_topic_form| %>
-                <p>
-                    <%= new_topic_form.label :title %>
-                    <%= new_topic_form.text_field :title %><br><br>
+            <h2>Create the first topic for your new course!</h2>
+            <ul>
+                <%= f.fields_for :topics do |new_topic_form| %>
+                    <p>
+                        <%= new_topic_form.label :title %>
+                        <%= new_topic_form.text_field :title %><br><br>
 
-                    <%= new_topic_form.label :description %>
-                    <%= new_topic_form.text_area :description %>
-                </p>
-            <% end %>
+                        <%= new_topic_form.label :description %>
+                        <%= new_topic_form.text_area :description %>
+                    </p>
+                <% end %>
+            </ul>
         <% end %>
-    </ul>
 
     <%= f.submit %>
 <% end %>
