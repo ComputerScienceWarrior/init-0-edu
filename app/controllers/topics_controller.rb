@@ -10,6 +10,7 @@ class TopicsController < ApplicationController
 
     def new
         @topic = Topic.new
+        render_dashboard
     end
 
     def create
