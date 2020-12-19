@@ -17,13 +17,13 @@
     <h1>Welcome, <%= current_student.username%></h1>
     <p id="logout-paragraph">
         <p>Logged in as <%= current_student.username %></p>
-        <p><%= link_to "Logout", logout_path %></p>        
+        <p><%= link_to "Logout", logout_path, id: "student-logout-btn" %></p>        
     </p>
     
     <nav id="nav-bar">
       <ul>
-        <li><b>Courses</b></li>
-        <li>Profile</li>
+        <li><%= link_to "Courses", courses_path %></li>
+        <li><%= link_to "Profile", student_path(current_student) %></li>
         <li>Transcript</li>
         <li>Resources</li>
       </ul>
