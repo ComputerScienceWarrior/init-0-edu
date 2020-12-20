@@ -7,6 +7,7 @@ class CoursesController < ApplicationController
     end
 
     def show
+        set_course_session_id
         render_dashboard
     end
 
