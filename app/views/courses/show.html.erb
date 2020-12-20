@@ -4,5 +4,12 @@
 <%= @course.description %>
 <%= @course.duration %>
 <%= @course.rating %>
+<% @course.comments.each do |comment| %>
+    <div id="courses-comments-div">
+        <p><%= comment.content %><br></p>
+        <%= link_to comment.student.username, student_path(comment.student) %><br>
+        <%= link_to comment.course.title, course_path(comment.course) %><br>
+    </div>
+<% end %>
 
 <b><%= link_to "Comment on Course", new_comment_path %></b>
