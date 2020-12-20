@@ -1,5 +1,13 @@
 <h2>All Topics:</h1>
 <hr>
 <% @topics.each do |topic| %>
-    <p><%= link_to topic.title, topic_path(topic) %></p>
+    <div id="topics-div">
+        <p><%= link_to topic.title, topic_path(topic) %></p>
+        <% if current_student.is_admin %>
+            <%= form_tag topic_path(topic), method: "delete" do %>
+                <%= submit_tag "Delete Topic" %>
+            <% end %>
+            <%= link_to "Edit Topic", edit_topic_path(topic) %>
+        <% end %>
+    </div>
 <% end %>
