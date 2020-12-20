@@ -1,5 +1,5 @@
 class CoursesController < ApplicationController
-    before_action :find_course, only: [:show, :edit, :destroy]
+    before_action :find_course, only: [:show, :edit, :update, :destroy]
 
     def index
         @courses = Course.all
@@ -31,7 +31,12 @@ class CoursesController < ApplicationController
     end
 
     def update
-
+        @course.update(course_params)
+        if @course
+            redirect_to course_path(@course)
+        else
+            render :edit
+        end
     end
 
     def destroy
