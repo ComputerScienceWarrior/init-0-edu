@@ -13,11 +13,7 @@ class StudentsController < ApplicationController
 
     def show
         @student = Student.find_by_id(params[:id])
-        if current_student.is_admin
-            render_dashboard
-        else
-            render_dashboard
-        end
+        render_dashboard
     end
 
     def new
@@ -43,7 +39,12 @@ class StudentsController < ApplicationController
 
     def update
         @student.update(student_params)
-        redirect_to student_path(@student)
+        if @student
+            redirect_to student_path(@student)
+        else
+            render :edit
+        end
+
     end
 
     def destroy
