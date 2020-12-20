@@ -1,8 +1,10 @@
 class TopicsController < ApplicationController
     before_action :find_course_and_topic, only: [:show, :edit, :update, :destroy]
+    before_action :render_dashboard, only: [:show, :edit]
 
     def index
         @topics = Topic.all
+        render_dashboard
     end
 
     def show
@@ -27,7 +29,6 @@ class TopicsController < ApplicationController
     end
 
     def edit
-        render_dashboard
     end
 
     def update
@@ -38,7 +39,7 @@ class TopicsController < ApplicationController
             render :edit
         end
     end
-    git commit -m "Create destroy action and add logic to destroy Topic. Add update action logic. render proper dashboards for new topic form. Update before action from :delete to :destroy."
+
     def destroy
         @topic.destroy
         redirect_to course_path(@course)
