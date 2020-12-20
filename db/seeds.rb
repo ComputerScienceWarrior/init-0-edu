@@ -7,4 +7,5 @@ students_firstname.each.with_index(0) do |student, i|
     student = Student.create!(firstname: students_firstname[i], lastname: students_lastname[i], username: students_username[i], email: students_email[i], password: "1", is_admin: false)
 end
 
+student1 = Student.create!(firstname: "James-Ryan", lastname: "Stampley", username: "init-0", email: "james@init-0.edu", password: "1", is_admin: true)
 
