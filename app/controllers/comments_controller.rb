@@ -16,7 +16,7 @@ class CommentsController < ApplicationController
     def create
         @comment = Comment.create(comment_params)
         if @comment
-            redirect_to comment_path(@comment)
+            redirect_to course_path(@comment.course)
         else
             render :new
         end
@@ -27,6 +27,7 @@ class CommentsController < ApplicationController
     end
 
     def update
+ 
 
     end
 
