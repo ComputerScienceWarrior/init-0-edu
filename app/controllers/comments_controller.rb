@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
-    before_action :find_comment, only: [:show, :edit, :delete]
+    before_action :find_comment, only: [:show, :edit, :destroy]
 
     def index
         @comments = Comment.all
@@ -23,16 +23,22 @@ class CommentsController < ApplicationController
     end
 
     def edit
-        
+        render_dashboard
     end
 
     def update
- 
-
+        @comment.update(comment_params)
+        if @comment
+            redirect_to course_path(@comment.course)
+        else
+            render :edit
+        end
     end
 
-    def delete
-
+    def destroy
+        @course = Course.find(session[:course_id])
+        @comment.destroy
+        redirect_to course_path(@course)
     end
 
     private
