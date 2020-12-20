@@ -4,6 +4,6 @@ class Course < ApplicationRecord
     has_many :students
     has_many :comments
     has_many :students, through: :comments
-    has_many :comments, through: :students
+    # has_many :comments, through: :students
     validates_presence_of :title, :description
 end
