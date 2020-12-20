@@ -18,4 +18,8 @@ class ApplicationController < ActionController::Base
             render :layout => "dashboard"
         end
     end
+
+    def set_course_session_id
+        session[:course_id] = @course.id
+    end
 end
