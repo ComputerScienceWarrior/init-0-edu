@@ -19,12 +19,10 @@ Rails.application.routes.draw do
 
   #################### COMMENTS ROUTES ####################
   resources :courses do 
-    resources :comments
+    resources :comments, only: [:index, :new, :show]
   end
 
-
-
-  resources :comments, only: [:index]
+  resources :comments
 
   #################### SESSION ROUTES ####################
   get "/login", to: "sessions#new"
