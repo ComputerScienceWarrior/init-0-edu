@@ -24,7 +24,8 @@ Rails.application.routes.draw do
   get "/login", to: "sessions#new"
   post "/login", to: "sessions#create", as: "sessions"
   get "/logout", to: "sessions#destroy"
-  get '/auth/google' => 'sessions#create_oauth'
+  get 'auth/:provider/callback', to: 'sessions#googleAuth'
+  get 'auth/failure', to: redirect('/')
  
   #################### ROOT ROUTE ####################
   root 'students#new'
