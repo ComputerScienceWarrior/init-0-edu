@@ -18,7 +18,13 @@ Rails.application.routes.draw do
   resources :topics, only: [:index]
 
   #################### COMMENTS ROUTES ####################
-  resources :comments, only: [:index, :show, :new, :create, :edit, :update, :delete, :destroy]
+  resources :courses do 
+    resources :comments
+  end
+
+
+
+  resources :comments, only: [:index]
 
   #################### SESSION ROUTES ####################
   get "/login", to: "sessions#new"
