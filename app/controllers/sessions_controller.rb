@@ -4,7 +4,7 @@ class SessionsController < ApplicationController
     end
 
     def create
-        @student =  Student.find_by(username: params[:username])
+        @student = Student.find_by(username: params[:username])
         if @student && @student.authenticate(params[:password])
             session[:student_id] = @student.id
             redirect_to student_path(@student)
@@ -37,7 +37,7 @@ class SessionsController < ApplicationController
     end
 
     private
-    
+
     def auth
         request.env['omniauth.auth']
     end
