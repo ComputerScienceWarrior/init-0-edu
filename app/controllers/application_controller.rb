@@ -22,4 +22,9 @@ class ApplicationController < ActionController::Base
     def set_course_session_id
         session[:course_id] = @course.id
     end
+
+    def current_course
+        Course.find_by_id(session[:course_id])
+    end
+
 end
