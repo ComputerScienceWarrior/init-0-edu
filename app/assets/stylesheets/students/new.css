@@ -1,0 +1,29 @@
+#new_student_div{
+    border: solid black 1px;
+    margin: 0 20%;
+    border-radius: 20px;
+    /* display: flex; */
+}
+.new_student{
+    padding: 20px;
+    /* width: 20%; */
+}
+
+.new_student input{
+    width: 200px;
+    height: 20px;
+}
+
+#create_student:hover{
+    transition: 0.3s;
+    font-weight: bold;
+}
+
+#create_student{
+    transition: 0.3s;
+    font-weight: 100;
+}
+
+.new_student label{
+    text-align: left;
+}
