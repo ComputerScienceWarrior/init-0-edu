@@ -11,5 +11,6 @@
         <%= link_to comment.course.title, course_path(comment.course) %><br>
     </div>
 <% end %>
+<p><%= link_to "All Courses Topics", course_topics_path(@course) %></p>
 
 <b><%= link_to "Comment on Course", new_comment_path %></b>
