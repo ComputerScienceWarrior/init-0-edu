@@ -1,13 +1,13 @@
-<h2>All Topics:</h1>
+<h2><%= @course.title %> course topics:</h2>
 <hr>
-<% @topics.each do |topic| %>
+<% @course.topics.each do |topic| %>
     <div id="topics-div">
-        <p><%= link_to topic.title, topic_path(topic) %></p>
+        <p><%= link_to topic.title, course_topic_path(topic, @course) %></p>
         <% if current_student.is_admin %>
-            <%= form_tag topic_path(topic), method: "delete" do %>
+            <%= form_tag course_topic_path(topic, @course), method: "delete" do %>
                 <%= submit_tag "Delete Topic" %>
             <% end %>
-            <%= link_to "Edit Topic", edit_topic_path(topic) %>
+            <%= link_to "Edit Topic", edit_course_topic_path(topic, @course) %>
         <% end %>
     </div>
 <% end %>
