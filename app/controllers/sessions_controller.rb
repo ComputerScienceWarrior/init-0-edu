@@ -28,7 +28,7 @@ class SessionsController < ApplicationController
         @student.google_refresh_token = refresh_token if refresh_token.present?
         @student.save!
         session[:student_id] = @student.id
-        redirect_to student_path(@student)
+        redirect_to edit_student_path(@student)
       end
 
     def destroy
