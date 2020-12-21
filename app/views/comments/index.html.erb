@@ -1,4 +1,4 @@
 <% @comments.each do |comment| %>
-    Comment belongs to the post: <%= comment.course.title %><br>
-    Comment content: <%= comment.content %>
+    <h3>Comment belongs to the post:</h3> <%= link_to comment.course.title, course_path(comment.course) %><br>
+    <h3>Comment content:</h3> <%= comment.content %>
 <% end %>
