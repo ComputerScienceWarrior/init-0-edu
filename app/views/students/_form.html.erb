@@ -1,9 +1,15 @@
-<%= form_for @student do |f| %>
-    First Name:<%= f.text_field :firstname %><br><br>
-    Last Name:<%= f.text_field :lastname %><br><br>
-    Username:<%= f.text_field :username %><br><br>
-    Password:<%= f.password_field :password %><br><br>
-    Password Confirmation: <%= f.password_field :password_confirmation %><br><br>
-    Enter Email Address: <%= f.text_field :email %><br><br>
-    <%= f.submit %>
-<% end %>
+<div id="new_student_div">
+    <%= form_for @student do |f| %>
+        <% @student.errors.full_messages.each do |msg| %>
+            <li class="errors"><%= msg %></li>
+        <% end %>
+        <label>Enter Your First Name:</label><br><%= f.text_field :firstname %><br><br>
+        <label>Enter Your Last Name:</label><br><%= f.text_field :lastname %><br><br>
+        <label>Create a Username (Must be at least 10 characters with no spaces):</label><br><%= f.text_field :username %><br><br>
+        <label>Password:</label><br><%= f.password_field :password %><br><br>
+        <label>Password Confirmation:</label><br><%= f.password_field :password_confirmation %><br><br>
+        <label>Enter Email Address:</label><br><%= f.text_field :email %><br><br>
+        
+        <%= f.submit id: "create_student", title: "Create a new Student!" %>
+    <% end %>
+</div>
