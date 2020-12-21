@@ -6,16 +6,16 @@ Rails.application.routes.draw do
   get "/signup", to: "students#new"
   post "signup", to: "students#new"
   delete '/students/:id', to: 'students#destroy'
-
+ 
   #################### COURSES / NESTED TOPICS ROUTES ####################
   #nested attribute to create a topic when a new course is created
-  resources :courses, only: [:index, :show, :new, :create, :edit, :update] do 
-    resources :topics, only: [:new]
+  resources :courses do 
+    resources :topics
   end
   delete '/courses/:id', to: 'courses#destroy'
 
   #################### TOPICS ROUTES ####################
-  resources :topics, only: [:index, :show, :new, :create, :edit, :update, :delete, :destroy]
+  resources :topics, only: [:index]
 
   #################### COMMENTS ROUTES ####################
   resources :comments, only: [:index, :show, :new, :create, :edit, :update, :delete, :destroy]
