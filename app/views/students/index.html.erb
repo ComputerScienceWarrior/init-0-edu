@@ -1,8 +1,17 @@
-<h1><% @students.each do |student| %></h1>
-    <div id="student-data-div">
-        <%= link_to student.username, student_path(student) %>
-        <%= form_tag student_path(student.id), method: "delete" do %>
-            <%= submit_tag "Delete Student" %>
+<table id="student-admin-index">
+    <thead><th>Username</th><th>Email</th><th>Comments</th><th>Delete Student</th></thead>
+    <tbody>
+        <% @students.each do |student| %>
+            <tr>
+                <td><%= link_to student.username, student_path(student) %></td>
+                <td><%= student.email %>
+                <td><%= link_to "Comments", comments_path %></td>
+                <td>
+                    <%= form_tag student_path(student.id), method: "delete" do %>
+                        <%= submit_tag "Delete Student" %>
+                    <% end %>
+                </td>
+            </tr>
         <% end %>
-    </div>
-<% end %>
+    </tbody>
+</table>
