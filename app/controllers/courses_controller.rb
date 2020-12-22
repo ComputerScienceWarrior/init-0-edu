@@ -19,7 +19,10 @@ class CoursesController < ApplicationController
 
     def create
         @course = Course.create(course_params)
-        if @course
+        binding.pry
+        if @course && @topic
+            redirect_to course_topic_path()
+        elsif @course
             redirect_to course_path(@course)
         else
             render :new
