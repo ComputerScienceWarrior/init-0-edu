@@ -11,6 +11,7 @@ Rails.application.routes.draw do
       resources :comments
       resources :topics
     end
+    resources :topics
   end
 
   #################### STUDENT ROUTES ####################
