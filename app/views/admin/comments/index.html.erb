@@ -1,8 +1,17 @@
 <h2>View all comments</h2>
 
-<% student.comments.each do |comment| %>
-    <h3>Comment belongs to the course</h3> <%= link_to comment.course.title, course_path(comment.course) %><br>
-    <h3>Comment content:</h3> <%= comment.content %>
-    <p>Comment by: <%= comment.student.username %></p>
-<% end %>
+<%= collection_select(:comment, :course_id, Course.all, :id, :course_name, prompt: true) %><br><br>
+<%= button_tag "View Comments", id: 'view-comment-btn'%><br>
+<table class="admin-tables">
+    <thead>
+        <th>Commenter</th>
+        <th>Content</th>
+    </thead>
 
+    <tbody id="table-body">
+        <% @comments.each do |comment| %>
+            <td><%= link_to comment.student.username %></td>
+            <td><%= link_to comment.content %></td>
+        <% end %>
+    </tbody>
+</table>
