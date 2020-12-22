@@ -5,4 +5,8 @@ class Course < ApplicationRecord
     has_many :comments
     has_many :students, through: :comments
     validates_presence_of :title, :description
+
+    def course_name
+        self.title
+    end
 end
