@@ -1,9 +1,10 @@
 class StudentsController < ApplicationController
-    before_action :find_student, only: [:index, :edit, :update]
+    before_action :find_student, only: [:edit, :update]
+    before_action :authentication_required, only: [:index]
 
     def index
         #only an admin student can view the students page
-        if @student.is_admin
+        if current_student.is_admin
             @students = Student.all
             render_dashboard
         else
@@ -51,9 +52,11 @@ class StudentsController < ApplicationController
         @student = Student.find_by_id(params[:id])
 
         if current_student.is_admin
+            @student.comments.destroy
             @student.destroy 
             redirect_to students_path
         else
+            @student.comments.destroy
             @student.destroy
             redirect_to root_path
         end
