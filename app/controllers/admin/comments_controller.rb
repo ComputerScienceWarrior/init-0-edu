@@ -1,7 +1,7 @@
 class Admin::CommentsController < ApplicationController
 
     def index
-        @course = Course.find(session[:course_id])
+        @course = Course.find(params[:course_id])
         @students = Student.all
         @comments = Comment.by_course(@course)
         render_dashboard

@@ -1,7 +1,5 @@
 <h2>View all comments</h2>
 
-<%= collection_select(:comment, :course_id, Course.all, :id, :course_name, prompt: true) %><br><br>
-<%= button_tag "View Comments", id: 'view-comment-btn'%><br>
 <table class="admin-tables">
     <thead>
         <th>Commenter</th>
