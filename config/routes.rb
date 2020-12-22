@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   #################### ADMIN ROUTES ####################
   namespace :admin do
     resources :students, only: [:index, :destroy]
+    resources :comments, only: [:index, :destroy]
     resources :courses
   end
 
