@@ -7,7 +7,11 @@ class SessionsController < ApplicationController
         @student = Student.find_by(username: params[:username])
         if @student && @student.authenticate(params[:password])
             session[:student_id] = @student.id
-            redirect_to student_path(@student)
+            if @student.is_admin
+                redirect_to admin_students_path
+            else
+                redirect_to student_path(@student)
+            end
         else
             redirect_to login_path
         end
