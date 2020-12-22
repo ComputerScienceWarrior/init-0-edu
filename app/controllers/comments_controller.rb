@@ -2,6 +2,7 @@ class CommentsController < ApplicationController
     before_action :find_comment, only: [:show, :edit, :destroy]
 
     def index
+        @students = Student.all
         @comments = Comment.all
         render_dashboard
     end

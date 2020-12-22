@@ -1,14 +1,8 @@
-<% if current_student.is_admin %>
-    <h2>View all comments</h2>
-    <% @comments.each do |comment| %>
-        <ul id="comments-ul">
-            <li><%= link_to comment.course.title, course_path(comment.course) %></li>
-            <li><%= comment.content %></li>
-        </ul>
-    <% end %>
-<% else %>
-    <% @current_student.comments.each do |comment| %>
-        <h3>Comment belongs to the course</h3> <%= link_to comment.course.title, course_path(comment.course) %><br>
-        <h3>Comment content:</h3> <%= comment.content %>
-    <% end %>
+<h2>View all comments</h2>
+<% student = Student.find(params[:student_id])%>
+<% student.comments.each do |comment| %>
+    <h3>Comment belongs to the course</h3> <%= link_to comment.course.title, course_path(comment.course) %><br>
+    <h3>Comment content:</h3> <%= comment.content %>
+    <p>Comment by: <%= comment.student.username %></p>
 <% end %>
+
