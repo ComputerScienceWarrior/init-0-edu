@@ -1,24 +1,24 @@
 #google-signup{
     margin-bottom: 10px;
 }
-.new_student{
+
+form{
     padding: 20px;
-    /* width: 20%; */
 }
 
-.new_student input{
+form input {
     width: 270px;
-    height: 10px;
+    height: 15px;
     padding: 20px;
-    font-size: 20px;
+    font-size: 18px;
 }
-
 
 #create_student{
-    width: 270px;
-    height: 20px;
-    font-size: 16px;
-    padding-top: 10px;
+    padding-top: 3px;
+}
+
+#login-btn{
+    padding-top: 5px;
 }
 
 .new_student label{
