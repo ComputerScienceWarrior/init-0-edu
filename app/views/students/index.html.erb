@@ -5,7 +5,7 @@
             <tr>
                 <td><%= link_to student.username, student_path(student) %></td>
                 <td><%= student.email %>
-                <td><%= link_to "Comments", comments_path %></td>
+                <td><%= link_to "Comments", student_comments_path(student.id) %></td>
                 <td>
                     <%= form_tag student_path(student.id), method: "delete" do %>
                         <%= submit_tag "Delete Student" %>
