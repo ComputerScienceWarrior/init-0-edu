@@ -26,7 +26,7 @@ class SessionsController < ApplicationController
         # Note: Refresh_token is only sent once during the first request
         refresh_token = access_token.credentials.refresh_token
         @student.google_refresh_token = refresh_token if refresh_token.present?
-        @student.save!
+        @student.save
         session[:student_id] = @student.id
         redirect_to student_path(@student)
       end
