@@ -1,6 +1,6 @@
-#student-admin-index{
+.admin-tables{
     margin-left: 20%;
 }
-#student-admin-index td{
+.admin-tables td{
     padding: 10px;
 }

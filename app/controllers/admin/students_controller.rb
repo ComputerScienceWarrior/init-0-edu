@@ -2,7 +2,6 @@ class Admin::StudentsController < ApplicationController
     before_action :authentication_required, only: [:index]
 
     def index
-        if current_student.is_admin
         @students = Student.all
         render_dashboard
     end
