@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   end
 
   #################### STUDENT ROUTES ####################
-  resources :students, only: [:index, :show, :new, :create, :edit, :update] 
+  resources :students, only: [:show, :new, :create, :edit, :update] 
   get "/signup", to: "students#new"
   post "signup", to: "students#new"
   delete '/students/:id', to: 'students#destroy'

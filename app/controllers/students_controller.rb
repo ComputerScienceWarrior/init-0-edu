@@ -1,16 +1,5 @@
 class StudentsController < ApplicationController
     before_action :find_student, only: [:edit, :update]
-    before_action :authentication_required, only: [:index]
-
-    def index
-        #only an admin student can view the students page
-        if current_student.is_admin
-            @students = Student.all
-            render_dashboard
-        else
-            redirect_to student_path(@student)
-        end
-    end
  
     def show
         @student = Student.find_by_id(params[:id])
