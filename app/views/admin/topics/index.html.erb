@@ -1,0 +1,16 @@
+<table id="topic-admin-index" class="admin-tables">
+    <thead><th>Topic Title</th><th>Description</th><th>Delete Student</th></thead>
+    <tbody>
+        <% @topics.each do |topic| %>
+            <tr>
+                <td><%= link_to topic.title, admin_topics_path %></td>
+                <td><%= topic.description %>
+                <td>
+                    <%= form_tag admin_topic_path(topic.id), method: "delete" do %>
+                        <%= submit_tag "Delete Topic" %>
+                    <% end %>
+                </td>
+            </tr>
+        <% end %>
+    </tbody>
+</table>
