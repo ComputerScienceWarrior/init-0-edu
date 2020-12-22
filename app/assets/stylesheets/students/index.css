@@ -1,6 +1,12 @@
 .admin-tables{
     margin-left: 20%;
+    border: 1px solid black;
 }
 .admin-tables td{
+    padding: 10px;
+    border: 1px solid black;
+}
+
+.admin-tables th{
     padding: 10px;
 }
