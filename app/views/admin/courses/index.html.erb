@@ -1,0 +1,21 @@
+<%= link_to "Add Course", new_course_path, id: "create-course-button"%>
+<h2>All Courses</h2>
+<table id="course-admin-index" class="admin-tables">
+    <thead><th>Title</th><th>Topics</th><th>Comments</th><th>Delete Course</th><th>Ratings</th></thead>
+    <tbody>
+        <% @courses.each do |course| %>
+            <tr>
+                <td><%= link_to course.title, course_path(course) %></td>
+                <td><%= link_to "Topics", course_topics_path(course) %>
+                <td><%= link_to "Comments", course_comments_path(course) %></td>
+                <td>
+                    <%= form_tag course_path(course), method: "delete" do %>
+                        <%= submit_tag "Delete Course" %>
+                    <% end %>
+                </td>
+                <td> 4/ 5</td>
+            </tr>
+        <% end %>
+    </tbody>
+</table>
+
