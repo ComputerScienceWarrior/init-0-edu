@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   #################### ADMIN ROUTES ####################
   namespace :admin do
-    resources :students, only: [:index, :destroy] do
+    resources :students, only: [:index, :show, :destroy] do
       resources :comments
     end
     resources :comments, only: [:index, :destroy]
