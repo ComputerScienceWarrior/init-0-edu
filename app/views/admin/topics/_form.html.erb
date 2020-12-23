@@ -1,8 +1,9 @@
 <% @topic.errors.full_messages.each do |msg| %>
     <li class="errors"><%= msg %></li>
 <% end %>
-<%= form_for @topic do |f| %>
+<%= form_for :topic do |f| %>
     Title of Topic:<%= f.text_field :title %><br><br>
+    <%= f.hidden_field :course_id, value: params[:course_id] %>
     Description:<%= f.text_area :description %><br><br>
-    <%= f.submit %>
+    <%= f.submit "Create Topic" %>
 <% end %>
