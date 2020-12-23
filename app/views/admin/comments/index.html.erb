@@ -7,8 +7,11 @@
     </thead>
 
     <tbody id="table-body">
-            <td><%= link_to comment.course.title %></td>
-            <td><%= link_to comment.content %></td>
+        <% @comments.each do |comment| %>
+            <tr>
+                <td><%= link_to comment.course.title, admin_course_path(comment.course) %></td>
+                <td><%= link_to comment.content %></td>
+            </tr>
         <% end %>
     </tbody>
 </table>
