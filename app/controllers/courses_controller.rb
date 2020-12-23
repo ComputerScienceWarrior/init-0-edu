@@ -18,15 +18,15 @@ class CoursesController < ApplicationController
     end
 
     def create
-        @course = Course.create(course_params)
-        binding.pry
-        if @course && @topic
-            redirect_to course_topic_path()
-        elsif @course
-            redirect_to course_path(@course)
-        else
-            render :new
-        end
+        # @course = Course.create(course_params)
+        # binding.pry
+        # if @course && @topic
+        #     redirect_to course_topic_path()
+        # elsif @course
+        #     redirect_to course_path(@course)
+        # else
+        #     render :new
+        # end
     end
 
     def edit
@@ -44,6 +44,7 @@ class CoursesController < ApplicationController
 
     def destroy
         @course.topics.destroy
+        @course.comments.destroy
         @course.destroy
         redirect_to courses_path
     end
