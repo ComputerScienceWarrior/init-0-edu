@@ -16,7 +16,7 @@
                 <td><%= link_to "Topics", admin_course_topics_path(course) %>
                 <td><%= link_to "Comments", admin_course_comments_path(course) %></td>
                 <td> 4/ 5</td>
-                <td><%= link_to "Create Topic", new_admin_topic_path %></td>
+                <td><%= link_to "Create Topic", new_admin_course_topic_path(course) %></td>
                 <td>
                     <%= form_tag admin_course_path(course), method: "delete" do %>
                         <%= submit_tag "Delete Course" %>
