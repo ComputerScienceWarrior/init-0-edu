@@ -13,14 +13,6 @@ class ApplicationController < ActionController::Base
         !current_student.nil?  
     end
 
-    def render_dashboard
-        if current_student.is_admin
-            render :layout => "admin"
-        else
-            render :layout => "dashboard"
-        end
-    end
-
     def current_course
         Course.find_by_id(session[:course_id])
     end
