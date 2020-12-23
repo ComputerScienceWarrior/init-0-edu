@@ -6,4 +6,8 @@ class Comment < ApplicationRecord
     def self.by_course(course_id)
         where(course: course_id)
     end
+
+    def self.by_student(student_id)
+        where(student: student_id)
+    end
 end
