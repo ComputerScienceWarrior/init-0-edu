@@ -1,13 +1,16 @@
 class Admin::StudentsController < ApplicationController
     before_action :authentication_required, only: [:index]
+    before_action :find_student, only: [:show, :destroy]
     layout "admin"
 
     def index
         @students = Student.all
     end
 
+    def show
+    end
+
     def destroy
-        @student = Student.find_by_id(params[:id])
         @student.comments.destroy
         @student.destroy 
         redirect_to admin_students_path
@@ -20,7 +23,7 @@ class Admin::StudentsController < ApplicationController
     end
 
     def find_student
-        @student = Student.find(session[:student_id])
+        @student = Student.find(params[:id])
     end
 
 end
