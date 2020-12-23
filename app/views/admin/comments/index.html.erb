@@ -2,13 +2,12 @@
 
 <table class="admin-tables">
     <thead>
-        <th>Commenter</th>
+        <th>Course Commented On</th>
         <th>Content</th>
     </thead>
 
     <tbody id="table-body">
-        <% @comments.each do |comment| %>
-            <td><%= link_to comment.student.username %></td>
+            <td><%= link_to comment.course.title %></td>
             <td><%= link_to comment.content %></td>
         <% end %>
     </tbody>
