@@ -12,11 +12,11 @@
         <% @courses.each do |course| %>
             <tr>
                 <td><%= link_to course.title, course_path(course) %></td>
-                <td><%= link_to "Topics", course_topics_path(course) %>
+                <td><%= link_to "Topics", admin_course_topics_path(course) %>
                 <td><%= link_to "Comments", admin_course_comments_path(course) %></td>
                 <td> 4/ 5</td>
                 <td>
-                    <%= form_tag course_path(course), method: "delete" do %>
+                    <%= form_tag admin_course_path(course), method: "delete" do %>
                         <%= submit_tag "Delete Course" %>
                     <% end %>
                 </td>
