@@ -3,7 +3,7 @@
     <tbody>
         <% @topics.each do |topic| %>
             <tr>
-                <td><%= link_to topic.title, admin_topics_path %></td>
+                <td><%= link_to topic.title, admin_topic_path(topic) %></td>
                 <td><%= topic.description %>
                 <td>
                     <%= form_tag admin_topic_path(topic.id), method: "delete" do %>
