@@ -15,7 +15,8 @@ Rails.application.routes.draw do
   end
   get "/admin/courses/:course_id/topics/new", to: "admin/topics#new"
   post "/admin/courses/:course_id/topics/new", to: "admin/topics#create"
-
+  post "admin/courses/:course_id/comments/new", to: "admin/comments#create"
+  
   #################### STUDENT ROUTES ####################
   resources :students, only: [:show, :new, :create, :edit, :update] 
   get "/signup", to: "students#new"
@@ -33,7 +34,7 @@ Rails.application.routes.draw do
   delete '/courses/:id', to: 'courses#destroy'
 
   #################### TOPICS ROUTES ####################
-  resources :topics
+  resources :topics, only: [:index, :show]
 
   #################### COMMENTS ROUTES ####################
   resources :courses do 
