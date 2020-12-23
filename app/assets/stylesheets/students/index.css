@@ -1,5 +1,9 @@
+#table-wrap-div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .admin-tables{
-    margin-left: 25%;
     border: 1px solid black;
 }
 .admin-tables td{
