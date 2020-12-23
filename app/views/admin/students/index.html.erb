@@ -3,9 +3,9 @@
     <tbody>
         <% @students.each do |student| %>
             <tr>
-                <td><%= link_to student.username, student_path(student) %></td>
+                <td><%= link_to student.username, admin_student_path(student) %></td>
                 <td><%= student.email %>
-                <td><%= link_to "Comments", student_comments_path(student.id) %></td>
+                <td><%= link_to "Comments", admin_student_comments_path(student) %></td>
                 <td>
                     <%= form_tag admin_student_path(student), method: "delete" do %>
                         <%= submit_tag "Delete Student" %>
