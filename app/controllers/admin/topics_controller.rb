@@ -4,8 +4,7 @@ class Admin::TopicsController < ApplicationController
     layout "admin"
 
     def index
-        @course = Course.find(params[:course_id])
-        @topics = Topic.by_course(@course)
+        @topics = Topic.by_course(params[:course_id])
     end
 
     def show
@@ -18,7 +17,7 @@ class Admin::TopicsController < ApplicationController
     def create
         @topic = Topic.create(topic_params)
         if @topic
-            redirect_to topic_path(@topic)
+            redirect_to admin_course_topics_path(@topic.course)
         else
             render :new
         end
@@ -38,7 +37,7 @@ class Admin::TopicsController < ApplicationController
 
     def destroy
         @topic.destroy
-        redirect_to admin_course_path(@course)
+        redirect_to admin_course_topics_path(@course)
     end
 
     private
