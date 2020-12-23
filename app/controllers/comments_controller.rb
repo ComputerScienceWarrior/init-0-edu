@@ -1,10 +1,10 @@
 class CommentsController < ApplicationController
     before_action :find_comment, only: [:show, :edit, :destroy]
+    layout "dashboard"
 
     def index
         @students = Student.all
         @comments = Comment.all
-        render_dashboard
     end
 
     def show
@@ -24,7 +24,6 @@ class CommentsController < ApplicationController
     end
 
     def edit
-        render_dashboard
     end
 
     def update
