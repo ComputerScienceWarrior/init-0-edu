@@ -10,7 +10,7 @@
         <% @comments.each do |comment| %>
             <tr>
                 <td><%= link_to comment.course.title, admin_course_path(comment.course) %></td>
-                <td><%= link_to comment.content %></td>
+                <td><%= comment.content %></td>
             </tr>
         <% end %>
     </tbody>
