@@ -2,9 +2,8 @@ class Admin::CommentsController < ApplicationController
     layout "admin"
 
     def index
-        @course = Course.find(params[:course_id])
         @students = Student.all
-        @comments = Comment.by_course(@course)
+        @comments = Comment.by_student(params[:student_id])
     end
 
     def destroy
