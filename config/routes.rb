@@ -11,8 +11,10 @@ Rails.application.routes.draw do
       resources :comments
       resources :topics
     end
-    resources :topics
+    resources :topics, only: [:index, :show, :edit, :update, :destroy]
   end
+  get "/admin/courses/:course_id/topics/new", to: "admin/topics#new"
+  post "/admin/courses/:course_id/topics/new", to: "admin/topics#create"
 
   #################### STUDENT ROUTES ####################
   resources :students, only: [:show, :new, :create, :edit, :update] 
@@ -31,7 +33,7 @@ Rails.application.routes.draw do
   delete '/courses/:id', to: 'courses#destroy'
 
   #################### TOPICS ROUTES ####################
-  resources :topics, only: [:index]
+  resources :topics
 
   #################### COMMENTS ROUTES ####################
   resources :courses do 
