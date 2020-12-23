@@ -7,7 +7,6 @@ class CoursesController < ApplicationController
     end
 
     def show
-        set_course_session_id
     end
 
     private
