@@ -25,9 +25,8 @@ Rails.application.routes.draw do
   end
  
   #################### COURSES / NESTED TOPICS ROUTES ####################
-  #nested attribute to create a topic when a new course is created
-  resources :courses do 
-    resources :topics
+  resources :courses, only: [:index, :show] do 
+    resources :topics, only: [:index, :show]
   end
   delete '/courses/:id', to: 'courses#destroy'
 

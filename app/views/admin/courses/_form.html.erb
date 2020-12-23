@@ -1,0 +1,26 @@
+<% @course.errors.full_messages.each do |msg| %>
+    <li class="errors"><%= msg %></li>
+<% end %>
+<div id="course-and-topic-form">
+    <%= form_for @course do |f| %>
+        <%= f.text_field :title, placeholder: "Enter a title for the course." %><br><br>
+        <%= f.text_area :description, placeholder: "Enter a description for the course." %><br><br>
+        EST Duration of course (optional)<br><%= f.text_field :duration, placeholder: "00hrs:00mins" %>
+            <% if params[:action] === "new" %>
+                <h2>Create the first topic for your new course!</h2>
+                <ul>
+                    <%= f.fields_for :topics do |new_topic_form| %>
+                        <div id="new_topic_form-div">
+                            <%= new_topic_form.label :title %>
+                            <%= new_topic_form.text_field :title %><br><br>
+
+                            <%= new_topic_form.label :description %>
+                            <%= new_topic_form.text_area :description %>
+                        </div>
+                    <% end %>
+                </ul>
+            <% end %>
+
+        <%= f.submit %>
+    <% end %>
+</div>
