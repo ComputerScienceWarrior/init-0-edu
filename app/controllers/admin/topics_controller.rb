@@ -1,11 +1,11 @@
 class Admin::TopicsController < ApplicationController
     before_action :find_course_and_topic, only: [:show, :edit, :update, :destroy]
     before_action :render_dashboard, only: [:show, :edit]
+    layout "admin"
 
     def index
         @course = Course.find(params[:course_id])
         @topics = Topic.by_course(@course)
-        render_dashboard
     end
 
     def show
@@ -13,7 +13,6 @@ class Admin::TopicsController < ApplicationController
 
     def new
         @topic = Topic.new
-        render_dashboard
     end
 
     def create
@@ -31,7 +30,7 @@ class Admin::TopicsController < ApplicationController
     def update
         @topic.update(topic_params)
         if @topic
-            redirect_to topic_path(@topic)
+            redirect_to admin_topic_path(@topic)
         else
             render :edit
         end

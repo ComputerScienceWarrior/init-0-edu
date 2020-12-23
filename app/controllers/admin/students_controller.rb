@@ -1,9 +1,9 @@
 class Admin::StudentsController < ApplicationController
     before_action :authentication_required, only: [:index]
+    layout "admin"
 
     def index
         @students = Student.all
-        render_dashboard
     end
 
     def destroy

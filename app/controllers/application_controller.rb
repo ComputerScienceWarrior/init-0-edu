@@ -1,7 +1,6 @@
 class ApplicationController < ActionController::Base
     helper_method :current_student
     helper_method :logged_in_student?
-    helper_method :render_dashboard
     helper_method :set_course_session_id
     helper_method :current_course
     helper_method :authentication_required

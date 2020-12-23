@@ -1,20 +1,18 @@
 class Admin::CoursesController < ApplicationController
     before_action :find_course, only: [:show, :edit, :update, :destroy]
+    layout "admin"
 
     def index
         @courses = Course.all
-        render_dashboard
     end
 
     def show
         set_course_session_id
-        render_dashboard
     end
 
     def new
         @course = Course.new
         @course.topics.build
-        render_dashboard
     end
 
     def create
@@ -27,7 +25,6 @@ class Admin::CoursesController < ApplicationController
     end
 
     def edit
-        render_dashboard
     end
 
     def update

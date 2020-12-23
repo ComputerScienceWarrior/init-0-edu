@@ -7,7 +7,7 @@
                 <td><%= student.email %>
                 <td><%= link_to "Comments", student_comments_path(student.id) %></td>
                 <td>
-                    <%= form_tag admin_student_path(student.id), method: "delete" do %>
+                    <%= form_tag admin_student_path(student), method: "delete" do %>
                         <%= submit_tag "Delete Student" %>
                     <% end %>
                 </td>
