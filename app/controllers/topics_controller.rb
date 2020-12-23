@@ -1,5 +1,5 @@
 class TopicsController < ApplicationController
-    before_action :find_course_and_topic, only: [:show, :edit, :update, :destroy]
+    before_action :find_course_and_topic, only: [:show]
     layout "dashboard"
 
     def index
