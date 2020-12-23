@@ -20,7 +20,7 @@ class Admin::CoursesController < ApplicationController
     def create
         @course = Course.create(course_params)
         if @course
-            redirect_to course_path(@course)
+            redirect_to admin_course_path(@course)
         else
             render :new
         end
@@ -33,7 +33,7 @@ class Admin::CoursesController < ApplicationController
     def update
         @course.update(course_params)
         if @course
-            redirect_to course_path(@course)
+            redirect_to admin_course_path(@course)
         else
             render :edit
         end
@@ -42,7 +42,7 @@ class Admin::CoursesController < ApplicationController
     def destroy
         @course.topics.destroy
         @course.destroy
-        redirect_to courses_path
+        redirect_to admin_courses_path
     end
 
     private
