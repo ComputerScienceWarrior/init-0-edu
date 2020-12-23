@@ -10,7 +10,7 @@ class Admin::StudentsController < ApplicationController
         @student = Student.find_by_id(params[:id])
         @student.comments.destroy
         @student.destroy 
-        redirect_to students_path
+        redirect_to admin_students_path
     end
 
     private
