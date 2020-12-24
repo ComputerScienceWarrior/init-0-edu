@@ -3,7 +3,8 @@ class Admin::CommentsController < ApplicationController
 
     def index
         @students = Student.all
-        @comments = Comment.by_student(params[:student_id])
+        @comments_by_student = Comment.by_student(params[:student_id])
+        @comments_by_course = Comment.by_course(params[:course_id])
     end
 
     def show
