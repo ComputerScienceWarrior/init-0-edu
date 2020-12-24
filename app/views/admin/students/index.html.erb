@@ -8,7 +8,7 @@
                 <td><%= link_to "Comments", admin_student_comments_path(student) %></td>
                 <td>
                     <%= form_tag admin_student_path(student), method: "delete" do %>
-                        <%= submit_tag "Delete Student" %>
+                        <%= submit_tag "Delete Student", data: { confirm: "Are you sure you want to delete this profile?"} %>
                     <% end %>
                 </td>
             </tr>
