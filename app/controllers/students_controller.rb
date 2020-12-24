@@ -2,6 +2,10 @@ class StudentsController < ApplicationController
     layout "dashboard"
     before_action :find_student, only: [:edit, :update]
  
+    def index
+        redirect_to root_path
+    end
+
     def show
         @student = Student.find_by_id(params[:id])
     end
