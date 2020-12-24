@@ -1,5 +1,5 @@
 <% @topics.each do |topic| %>
     <div id="topics-div">
-        <p><%= link_to topic.title, course_topic_path(topic, current_course) %></p>
+        <p><%= link_to topic.title, course_topic_path(topic, params[:course_id]) %></p>
     </div>
 <% end %>
