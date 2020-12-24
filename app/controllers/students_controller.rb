@@ -1,9 +1,9 @@
 class StudentsController < ApplicationController
+    layout "dashboard"
     before_action :find_student, only: [:edit, :update]
  
     def show
         @student = Student.find_by_id(params[:id])
-        render_dashboard
     end
 
     def new
@@ -24,7 +24,6 @@ class StudentsController < ApplicationController
     end
 
     def edit
-        render_dashboard
     end
 
     def update
