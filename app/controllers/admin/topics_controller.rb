@@ -1,6 +1,5 @@
 class Admin::TopicsController < ApplicationController
     before_action :find_course_and_topic, only: [:show, :edit, :update, :destroy]
-    before_action :render_dashboard, only: [:show, :edit]
     layout "admin"
 
     def index
