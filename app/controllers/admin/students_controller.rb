@@ -11,7 +11,7 @@ class Admin::StudentsController < ApplicationController
     end
 
     def destroy
-        @student.comments.destroy
+        @student.comments.destroy_all
         @student.destroy 
         redirect_to admin_students_path
     end
