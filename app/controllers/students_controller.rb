@@ -46,11 +46,11 @@ class StudentsController < ApplicationController
         @student = Student.find_by_id(params[:id])
 
         if current_student.is_admin
-            @student.comments.destroy
+            @student.comments.destroy_all
             @student.destroy 
             redirect_to students_path
         else
-            @student.comments.destroy
+            @student.comments.destroy_all
             @student.destroy
             redirect_to root_path
         end
