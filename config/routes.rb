@@ -37,7 +37,7 @@ Rails.application.routes.draw do
   resources :topics, only: [:index, :show]
 
   #################### COMMENTS ROUTES ####################
-  resources :courses do 
+  resources :courses, only: [:index, :show] do 
     resources :comments, only: [:index, :new, :show]
   end
 
