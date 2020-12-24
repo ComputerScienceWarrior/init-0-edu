@@ -10,8 +10,9 @@ class StudentsController < ApplicationController
         @student = Student.new
         if logged_in_student?
             redirect_to student_path(current_student)
+        else
+            render :layout => 'application'
         end
-        render :layout => 'application'
     end
 
     def create
