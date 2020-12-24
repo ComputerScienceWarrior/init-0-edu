@@ -13,16 +13,15 @@
   </head>
 
   <body>
-
-    <h1>Welcome, <%= current_student.username%></h1>
-    <p id="logout-paragraph">
-        <p><%= link_to "Logout", logout_path, id: "student-logout-btn" %></p>        
-    </p>
     
     <nav id="nav-bar">
       <ul>
-        <li><%= link_to "Courses", courses_path %></li>
-        <li><%= link_to "Profile", student_path(current_student) %></li>
+          <li> <%= link_to "Student Login", login_path, id: "student-login-btn" %></li>
+        <% if logged_in_student? %>
+          <li><%= link_to "Courses", courses_path %></li>
+          <li><%= link_to "Profile", student_path(current_student) %></li>
+          <li><%= link_to "Logout", logout_path %></li>
+        <% end %>
       </ul>
     </nav>
     <%= yield %>
