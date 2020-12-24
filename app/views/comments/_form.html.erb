@@ -2,6 +2,6 @@
     Comment by: <%= link_to current_student.username, student_path(current_student) %><br>
     Comment Content: <%= f.text_area :content %><br>
     <%= f.hidden_field :student_id, value: current_student.id %>
-    <%= f.hidden_field :course_id, value: session[:course_id] %>
+    <%= f.hidden_field :course_id, value: params[:course_id] %>
     <%= f.submit %>
 <% end %>
