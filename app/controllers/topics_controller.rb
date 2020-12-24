@@ -3,7 +3,7 @@ class TopicsController < ApplicationController
     layout "dashboard"
 
     def index
-        @topics = Topic.all
+        @topics = Topic.by_course(params[:course_id])
     end
 
     def show
