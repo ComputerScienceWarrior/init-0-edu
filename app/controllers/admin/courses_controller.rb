@@ -36,7 +36,7 @@ class Admin::CoursesController < ApplicationController
     end
 
     def destroy
-        @course.topics.destroy
+        @course.topics.destroy_all
         @course.destroy
         redirect_to admin_courses_path
     end
