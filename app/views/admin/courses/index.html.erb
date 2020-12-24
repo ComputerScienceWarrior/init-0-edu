@@ -7,6 +7,7 @@
         <th>Ratings</th>
         <th>Create Topic</th>
         <th>Delete Course</th>
+        <th>Edit Course</th>
     </thead>
 
     <tbody>
@@ -22,6 +23,7 @@
                         <%= submit_tag "Delete Course" %>
                     <% end %>
                 </td>
+                <td><%= link_to "Edit Course", edit_admin_course_path(course)%></td>
             </tr>
         <% end %>
     </tbody>
