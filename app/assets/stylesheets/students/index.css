@@ -5,6 +5,7 @@
 }
 .admin-tables{
     border: 1px solid black;
+    width: 100%;
 }
 .admin-tables td{
     padding: 10px;
