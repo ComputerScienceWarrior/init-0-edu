@@ -3,7 +3,8 @@
         <% @student.errors.full_messages.each do |msg| %>
             <li class="errors"><%= msg %></li>
         <% end %>
-        <%= f.text_field :username, placeholder: "Create a Username" %><br><br>
+        <%= f.text_field :username, placeholder: "Create a Username" %><br>
+        <%= f.label :spaces, value: "No spaces allowed!", id: 'spaces_label' %><br>
         <%= f.password_field :password, placeholder: "Create a password" %><br><br>
         <%= f.password_field :password_confirmation, placeholder: "Confirm your password" %><br><br>
         <%= f.text_field :email, placeholder: "youremail@example.com" %><br><br>
