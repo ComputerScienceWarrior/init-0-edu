@@ -24,3 +24,10 @@ form input {
 .new_student label{
     text-align: left;
 }
+
+#spaces_label{
+    visibility: hidden;
+    font-size: 14px;
+    color: red;
+    font-style: italic;
+}
