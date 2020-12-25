@@ -6,7 +6,8 @@
         <%= f.text_field :username, placeholder: "Create a Username" %><br>
         <%= f.label :spaces, value: "No spaces allowed!", id: 'spaces_label' %><br>
         <%= f.password_field :password, placeholder: "Create a password" %><br><br>
-        <%= f.password_field :password_confirmation, placeholder: "Confirm your password" %><br><br>
+        <%= f.password_field :password_confirmation, placeholder: "Confirm your password" %><br>
+        <%= f.label :passward_matches, value: "Your passwords do not match.", id: 'non-matching_passwords_label' %><br>
         <%= f.text_field :email, placeholder: "youremail@example.com" %><br><br>
         
         <%= f.submit id: "create_student", title: "Create a new Student!" %>
