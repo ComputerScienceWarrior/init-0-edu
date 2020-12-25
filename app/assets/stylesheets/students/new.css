@@ -25,6 +25,13 @@ form input {
     text-align: left;
 }
 
+#non-matching_passwords_label{
+    visibility: hidden;
+    font-size: 14px;
+    color: red;
+    font-style: italic;
+}
+
 #spaces_label{
     visibility: hidden;
     font-size: 14px;
