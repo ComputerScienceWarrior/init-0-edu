@@ -1,7 +1,7 @@
-<% @topic.errors.full_messages.each do |msg| %>
-    <li class="errors"><%= msg %></li>
-<% end %>
 <%= form_for :topic do |f| %>
+    <% @topic.errors.full_messages.each do |msg| %>
+        <li class="errors"><%= msg %></li>
+    <% end %> 
     Title of Topic:<%= f.text_field :title %><br><br>
     <%= f.hidden_field :course_id, value: params[:course_id] %>
     Description:<%= f.text_area :description %><br><br>
