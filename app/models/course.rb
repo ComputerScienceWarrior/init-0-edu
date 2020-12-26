@@ -4,8 +4,8 @@ class Course < ApplicationRecord
     has_many :students
     has_many :comments
     has_many :students, through: :comments
-    validates_presence_of :title, :description
-    validates :description, length: {minimum: 10, message: "must have at least 10 words."}
+    validates_presence_of :title, :description, message: "for a new course cannot be empty."
+    validates :description, length: {minimum: 10, message: "for a new course must have at least 10 words."}
 
     def course_name
         self.title
