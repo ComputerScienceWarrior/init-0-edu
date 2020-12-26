@@ -7,6 +7,8 @@ class Student < ApplicationRecord
     validates :username, uniqueness: true
     validates :email, uniqueness: true
     validates :username, format: { without: /\s/, message: "cannot contain any spaces!" }
+    validates :username, format: { with: /\A[a-zA-Z0-9 ]+\z/ }
+    validates :username, length: { minimum: 8 }
     validates :username, presence: true
  
     def self.from_omniauth(auth)
