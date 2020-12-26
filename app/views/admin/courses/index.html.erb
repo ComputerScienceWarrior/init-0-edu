@@ -1,7 +1,7 @@
 <h2>All Courses</h2>
 <table id="course-admin-index" class="admin-tables">
     <thead><th>Title</th>
-        <th>Topics</th>    
+        <th>Course Topics</th>    
         <th>Course Comments</th>
         <th>Ratings</th>
         <th>Create Topic</th>
@@ -16,13 +16,13 @@
                 <td><%= link_to "Topics", admin_course_topics_path(course) %>
                 <td><%= link_to "Comments", admin_course_comments_path(course) %></td>
                 <td> 4/ 5</td>
-                <td><%= link_to "Create Topic", new_admin_course_topic_path(course) %></td>
+                <td><%= link_to image_tag("plus-icon.png", width: '25px'), new_admin_course_topic_path(course) %></td>
                 <td>
                     <%= form_tag admin_course_path(course), method: "delete" do %>
-                        <%= submit_tag "Delete Course" %>
+                        <%= link_to image_tag("trash.png", width: '25px'), admin_course_path(course), method: "delete", id: "create-course-button"%>
                     <% end %>
                 </td>
-                <td><%= link_to "Edit Course", edit_admin_course_path(course)%></td>
+                <td><%= link_to image_tag('edit-icon.png', width: '25px'), edit_admin_course_path(course)%></td>
             </tr>
         <% end %>
     </tbody>
