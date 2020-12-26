@@ -1,0 +1,99 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+ 
+
+ body{
+    text-align: center;
+    background: hsla(211, 85%, 95%, 0.92);
+    padding: 40px;
+	overflow-x: hidden; /* For Opera */
+	-webkit-box-shadow:
+		inset hsla(204, 65%, 15%, 1) 0 0 0 5px,
+		inset hsla(204, 65%, 25%, 1) 0 0 0 1px,
+		inset hsla(204, 65%, 35%, 1) 0 0 0 10px,
+		inset hsla(204, 55%, 45%, 1) 0 0 0 11px,
+		inset hsla(211, 55%, 45%, 0.92) 0 0 0 16px,
+		inset hsla(211, 55%, 65%, 0.92) 0 0 0 17px,
+		inset #ffdf6c 0 0 0 22px,
+		inset hsla(211, 95%, 95%, 0.92) 0 0 0 23px;
+	-moz-box-shadow:
+		inset hsla(204, 65%, 15%, 1) 0 0 0 5px,
+		inset hsla(204, 65%, 25%, 1) 0 0 0 1px,
+		inset hsla(204, 65%, 35%, 1) 0 0 0 10px,
+		inset hsla(204, 55%, 45%, 1) 0 0 0 11px,
+		inset hsla(211, 55%, 45%, 0.92) 0 0 0 16px,
+		inset hsla(211, 55%, 65%, 0.92) 0 0 0 17px,
+		inset #ffdf6c 0 0 0 22px,
+		inset hsla(211, 95%, 95%, 0.92) 0 0 0 23px;
+	box-shadow:
+		inset hsla(204, 65%, 15%, 1) 0 0 0 5px,
+		inset hsla(204, 65%, 25%, 1) 0 0 0 1px,
+		inset hsla(204, 65%, 35%, 1) 0 0 0 10px,
+		inset hsla(204, 55%, 45%, 1) 0 0 0 11px,
+		inset hsla(211, 55%, 45%, 0.92) 0 0 0 16px,
+		inset hsla(211, 55%, 65%, 0.92) 0 0 0 17px,
+		inset #ffdf6c 0 0 0 22px,
+		inset hsla(211, 95%, 95%, 0.92) 0 0 0 23px;
+ }
+
+ *{
+    text-decoration: none;
+    list-style-type: none;
+    box-sizing: border-box;
+    font-size: 20px;
+ }
+ #nav-bar ul{
+     display: flex;
+     justify-content: space-evenly;
+     border: solid 2px black;
+     border-radius: 5px;
+     padding: 10px 5px;
+ }
+
+ #student-1{
+     background-color: red;
+ }
+
+ #nav-bar ul li{
+    list-style-type: none;
+}
+
+ #student-data-div{
+    display: flex;
+    justify-content: center;
+ }
+
+ #courses-div{
+     display: flex;
+     justify-content: space-evenly;
+     align-items: center;
+ }
+ #topics-div{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+ }
+
+ .errors{
+     list-style-type: none;
+     color: red;
+     font-style: italic;
+ }
+
+ .field_with_errors{
+     display: inline;
+ }
