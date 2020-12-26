@@ -14,8 +14,8 @@ class Admin::TopicsController < ApplicationController
     end
 
     def create
-        @topic = Topic.create(topic_params)
-        if @topic
+        @topic = Topic.new(topic_params)
+        if @topic.save
             redirect_to admin_course_topics_path(@topic.course)
         else
             render :new
