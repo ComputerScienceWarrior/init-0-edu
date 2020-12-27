@@ -1,6 +1,6 @@
 class Admin::StudentsController < ApplicationController
     before_action :authentication_required, only: [:index]
-    before_action :find_student, only: [:show, :edit, :update :destroy]
+    before_action :find_student, only: [:show, :edit, :update, :destroy]
     before_action :require_admin
     layout "admin"
 
