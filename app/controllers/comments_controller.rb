@@ -28,7 +28,7 @@ class CommentsController < ApplicationController
 
     def update
         @comment.update(comment_params)
-        if @comment
+        if @comment.valid?
             redirect_to course_path(@comment.course)
         else
             render :edit
@@ -36,9 +36,8 @@ class CommentsController < ApplicationController
     end
 
     def destroy
-        @course = Course.find(session[:course_id])
         @comment.destroy
-        redirect_to course_path(@course)
+        redirect_to student_path(current_student)
     end
 
     private
