@@ -11,8 +11,11 @@ Rails.application.routes.draw do
       resources :comments
       resources :topics
     end
-    resources :topics, only: [:index, :show, :edit, :update, :destroy]
+    resources :topics, only: [:index, :show, :edit, :update, :destroy] do 
+      resources :videos
+    end
   end
+  get "admin/topics/:course_id/by_course", to: "admin/topics#index", as: "admin_topics_by_course"
   get "/admin/courses/:course_id/topics/new", to: "admin/topics#new"
   post "/admin/courses/:course_id/topics/new", to: "admin/topics#create"
   post "admin/courses/:course_id/comments/new", to: "admin/comments#create"
@@ -40,7 +43,6 @@ Rails.application.routes.draw do
   resources :courses, only: [:index, :show] do 
     resources :comments, only: [:index, :new, :show]
   end
-
   resources :comments
 
   #################### SESSION ROUTES ####################
