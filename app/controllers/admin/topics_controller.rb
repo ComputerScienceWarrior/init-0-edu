@@ -27,7 +27,7 @@ class Admin::TopicsController < ApplicationController
 
     def update
         @topic.update(topic_params)
-        if @topic
+        if @topic.valid?
             redirect_to admin_topic_path(@topic)
         else
             render :edit
