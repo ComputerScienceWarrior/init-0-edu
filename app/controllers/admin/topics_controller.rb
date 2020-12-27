@@ -3,7 +3,7 @@ class Admin::TopicsController < ApplicationController
     layout "admin"
 
     def index
-        @topics = Topic.by_course(params[:course_id])
+        @topics_by_course = Topic.by_course(params[:course_id])
     end
 
     def show
