@@ -29,7 +29,8 @@ class Admin::CoursesController < ApplicationController
 
     def update
         @course.update(course_params)
-        if @course
+        if @course.valid?
+            @course.update(course_params)
             redirect_to admin_course_path(@course)
         else
             render :edit
