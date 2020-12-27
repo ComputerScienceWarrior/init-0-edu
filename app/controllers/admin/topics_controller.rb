@@ -1,4 +1,5 @@
 class Admin::TopicsController < ApplicationController
+    before_action :require_admin
     before_action :find_course_and_topic, only: [:show, :edit, :update, :destroy]
     layout "admin"
 

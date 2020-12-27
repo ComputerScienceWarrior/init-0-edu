@@ -1,4 +1,5 @@
 class Admin::CoursesController < ApplicationController
+    before_action :require_admin
     before_action :find_course, only: [:show, :edit, :update, :destroy]
     layout "admin"
 

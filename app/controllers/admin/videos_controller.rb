@@ -1,4 +1,5 @@
 class Admin::VideosController < ApplicationController
+    before_action :require_admin
     before_action :find_video, only: [:show, :edit, :update, :destroy]
     layout "admin"
 
