@@ -1,9 +1,9 @@
-
-<%= link_to('Login with Google!', '/auth/google_oauth2') %>
+<h2>Login Below with</h2>
+<%= link_to(image_tag("google-icon.png", width: '25px'), '/auth/google_oauth2') %><br><br>
+- OR -
 <% @student.errors.full_messages.each do |msg| %>
     <li class="errors"><%= msg %></li>
 <% end %>
-<h2>Login</h2>
 <%= form_tag '/login' do %>
     <%= text_field_tag :username, nil, :placeholder => "Enter username"  %> <br><br>
     <%= password_field_tag :password, nil, :placeholder => "Enter password" %><br><br>
