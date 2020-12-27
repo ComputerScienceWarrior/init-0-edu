@@ -1,6 +1,6 @@
 class Admin::StudentsController < ApplicationController
     before_action :authentication_required, only: [:index]
-    before_action :find_student, only: [:show, :destroy]
+    before_action :find_student, only: [:show, :edit, :update :destroy]
     before_action :require_admin
     layout "admin"
 
@@ -9,6 +9,19 @@ class Admin::StudentsController < ApplicationController
     end
 
     def show
+    end
+
+    def edit
+    end
+
+    def update
+        @student.update(student_params)
+        if @student.valid?
+            redirect_to admin_student_path(@student)
+        else
+            render :edit
+        end
+
     end
 
     def destroy
