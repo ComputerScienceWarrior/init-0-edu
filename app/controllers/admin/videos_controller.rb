@@ -27,7 +27,7 @@ class Admin::VideosController < ApplicationController
 
     def update
         @video.update(video_params)
-        if @video
+        if @video.valid?
             redirect_to admin_topic_path(@video)
         else
             render :edit
