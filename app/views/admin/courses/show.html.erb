@@ -1,14 +1,19 @@
-<h1><%= @course.title %></h1><br>
 
-<%= label_tag "Description of Course:"%><br>
-<%= @course.description %>
-<%= @course.duration %>
-<%= @course.rating %>
-<% @course.comments.each do |comment| %>
-    <div id="courses-comments-div">
-        <p><%= comment.content %><br></p>
-        <%= link_to comment.student.username, admin_student_path(comment.student) %><br>
-    </div>
-<% end %>
 <p><%= link_to "All Courses Topics", admin_course_topics_path(@course) %></p>
 <b><%= link_to "Comment on Course", new_admin_course_comment_path(@course) %></b>
+
+<table class="admin-tables">
+    <thead>
+        <th>Description</th>    
+        <th>Course Topics</th>
+        <th>View Comments</th>
+    </thead>
+
+    <tbody>
+        <tr>
+            <td><%= @course.description %></td>
+            <td><%= link_to "All Courses Topics", admin_course_topics_path(@course) %></td>
+            <td><%= link_to "Comments", admin_course_comments_path(@course) %></td>
+        </tr>
+    </tbody>
+</table>
