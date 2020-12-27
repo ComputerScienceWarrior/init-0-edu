@@ -6,19 +6,22 @@ Rails.application.routes.draw do
     resources :students, only: [:index, :show, :destroy] do
       resources :comments
     end
-    resources :comments, only: [:index, :destroy]
+    resources :comments
     resources :courses do
       resources :comments
       resources :topics
+      post "/topics/:id/edit", to: "topics#update"
+      post "/topics/new", to: "topics#create"
     end
-    resources :topics, only: [:index, :show, :edit, :update, :destroy] do 
+    resources :topics do 
       resources :videos
     end
+    
   end
-  get "admin/topics/:course_id/by_course", to: "admin/topics#index", as: "admin_topics_by_course"
+  get "admin/topics/by_course/:course_id", to: "admin/topics#index", as: "admin_topics_by_course"
   get "/admin/courses/:course_id/topics/new", to: "admin/topics#new"
-  post "/admin/courses/:course_id/topics/new", to: "admin/topics#create"
   post "admin/courses/:course_id/comments/new", to: "admin/comments#create"
+  
   
   #################### STUDENT ROUTES ####################
   resources :students, only: [:show, :new, :create, :edit, :update] 
@@ -54,5 +57,4 @@ Rails.application.routes.draw do
  
   #################### ROOT ROUTE ####################
   root 'students#new'
-
 end
