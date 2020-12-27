@@ -1,1 +1,4 @@
 <h2><%= @student.username %>'s profile</h2>
+<% if current_student.id == params[:id].to_i %>
+    <p><%= link_to image_tag('edit-icon.png', width: '25px'), edit_admin_student_path(@student) %></p>
+<% end %>
