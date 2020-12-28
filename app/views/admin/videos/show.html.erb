@@ -1,3 +1,6 @@
 <h1><%= @video.title %> Page</h1>
-<%= @video.embedded_video %>
-
+<iframe width="560" height="315" src=<%= @video.url %> frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+    The video did not render properly.
+    Please refresh and try again.
+</iframe><br>
+<h2><%= @video.caption%></h2>
