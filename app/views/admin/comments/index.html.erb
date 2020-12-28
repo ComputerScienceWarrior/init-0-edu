@@ -9,7 +9,7 @@
     <tbody id="table-body">
         <% @comments_by_course.each do |comment| %>
             <tr>
-                <td><%= link_to comment.course.title, admin_student_path(comment.student) %></td>
+                <td><%= link_to comment.course.title, admin_course_path(comment.course) %></td>
                 <td><%= link_to comment.student.username, admin_student_path(comment.student) %></td>
                 <td><%= comment.content %></td>
             </tr>
