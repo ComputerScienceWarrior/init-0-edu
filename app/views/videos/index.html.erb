@@ -1,0 +1,14 @@
+<h1>Videos</h1>
+<table>
+        <thead>
+            <th>Video Title</th><th>caption</th><th>description</th><th>url</th>
+        </thead>
+    <tbody>
+        <% @videos.each do |video| %>
+            <td><%= link_to video.title %></td>
+            <td><%= link_to video.caption %></td>
+            <td><%= link_to video.description %></td>
+            <td><%= link_to video.url %></td>
+        <% end %>
+    </tbody>
+</table>
