@@ -39,6 +39,10 @@ class Admin::CoursesController < ApplicationController
 
     def destroy
         @course.comments.destroy_all
+        @course.topics.each do |topic|
+            #destroy all a topics videos
+            topic.videos.destroy_all
+        end
         @course.topics.destroy_all
         @course.destroy
         redirect_to admin_courses_path
