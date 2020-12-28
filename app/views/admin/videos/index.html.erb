@@ -1,13 +1,20 @@
 <h1>Videos</h1>
 <table class="admin-tables">
         <thead>
-            <th>Video Title</th><th>Caption</th><th>Course Video</th>
+            <th>Video Title</th><th>Caption</th><th>Course Video</th><th>Delete Video</th>
         </thead>
     <tbody>
-        <% @videos.each do |video| %>
-            <td><%= link_to video.title %></td>
-            <td><%= video.caption %></td>
-            <td><%= link_to "Memoization Video", video.url %></td>
-        <% end %>
+            <% @videos.each do |video| %>
+                <tr>
+                    <td><%= link_to video.title %></td>
+                    <td><%= video.caption %></td>
+                    <td><%= link_to "Memoization Video", video.url %></td>
+                    <td>
+                        <%= form_tag admin_topic_video_path(video.topic, video), method: "delete" do %>
+                            <%= link_to image_tag("trash.png", width: '25px'), admin_topic_video_path(video.topic, video), method: "delete", id: "delete-video-button", data: {confirm: "Are you sure?"}%>
+                        <% end %>
+                    </td>
+                </tr>
+            <% end %>
     </tbody>
 </table>
