@@ -20,23 +20,18 @@
 #                             )
 # end
 
-course_topics = ["Optimization", "Two Number Sum", "Hello world, C++ style"]
-course_topics.each.with_index(0) do |course_topic, k|
-    topic = Topic.create!(title: course_topic, description: "Here is the testing course description.", course_id: 1)
-end
+# course_topics = ["Optimization", "Two Number Sum", "Hello world, C++ style"]
+# course_topics.each.with_index(0) do |course_topic, k|
+#     topic = Topic.create!(title: course_topic, description: "Here is the testing course description.", course_id: "#{k + 1}")
+# end
 
-topic_videos = ["Memoization optimization", "Two Number Sum Video", "C++ Video"]
+topic_videos = ["Memoization optimization", "Two Number Sum Video", "C++ Viideo"]
 video_urls = [
-    "https://www.youtube.com/watch?v=oBt53YbR9Kk&t=5598s",
-    'https://www.youtube.com/watch?v=BoHO04xVeU0',
-    'https://www.youtube.com/watch?v=vLnPwxZdW4Y'
+    "https://www.youtube.com/embed/oBt53YbR9Kk&t",
+    'https://www.youtube.com/embed/BoHO04xVeU0',
+    'https://www.youtube.com/embed/vLnPwxZdW4Y'
     
 ]
-embedded_videos = [
-    '<iframe width="560" height="315" src="https://www.youtube.com/embed/oBt53YbR9Kk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
-    '<iframe width="560" height="315" src="https://www.youtube.com/embed/BoHO04xVeU0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
-    '<iframe width="560" height="315" src="https://www.youtube.com/embed/vLnPwxZdW4Y" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
-]
 topic_videos.each.with_index(0) do |video_name, l|
-    topic = Video.create!(title: video_name, caption: "Video caption #{l + 1}", url: video_urls[l], topic_id: 1, embedded_video: embedded_videos[l] )
+    topic = Video.create!(title: video_name, caption: "Video caption #{l + 1}", url: video_urls[l], topic_id: "#{l + 1}")
 end
