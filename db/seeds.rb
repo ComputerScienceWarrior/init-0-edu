@@ -1,21 +1,42 @@
-students_email = ["james@gmail.com", "kenny@gmail.com", "kris@gmail.com", "sjones@gmail.com", "justinherbert10@chargers.com"]
-students_username = ["jstampl12", "kennykay87", "kking1387", "starryjones52", "Jherbs10"]
-password = 'james123'
-students_username.each.with_index(0) do |student, i|
-    student = Student.create!(username: students_username[i], email: students_email[i], password: password, is_admin: false)
+# students_email = ["james@gmail.com", "kenny@gmail.com", "kris@gmail.com", "sjones@gmail.com", "justinherbert10@chargers.com"]
+# students_username = ["jstampl12", "kennykay87", "kking1387", "starryjones52", "Jherbs10"]
+# password = 'james123'
+# students_username.each.with_index(0) do |student, i|
+#     student = Student.create!(username: students_username[i], email: students_email[i], password: password, is_admin: false)
+# end
+
+# #for creating an admin
+# student1 = Student.create!(username: "ADMINinit0", email: "james@init-0.edu", password: "james123", is_admin: true)
+
+# course_titles = ["Memoization", "Javascript Algorithms", "C++"]
+
+# course_titles.each do |course|
+#     course = Course.create!(title: course, 
+#                             description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do 
+#                                 eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+#                                 veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea 
+#                                 commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit 
+#                                 esse cillum dolore eu fugiat nulla pariatur. ."
+#                             )
+# end
+
+course_topics = ["Optimization", "Two Number Sum", "Hello world, C++ style"]
+course_topics.each.with_index(0) do |course_topic, k|
+    topic = Topic.create!(title: course_topic, description: "Here is the testing course description.", course_id: 1)
 end
 
-#for creating an admin
-student1 = Student.create!(username: "ADMINinit0", email: "james@init-0.edu", password: "james123", is_admin: true)
-
-course_titles = ["DFS / BFS", "Memoization", "Hash Dash", "C++17 Full Course", "Basic Math"]
-
-course_titles.each.with_index(0) do |course, j|
-    course = Course.create!(title: course_titles[j], 
-                            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do 
-                                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-                                veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea 
-                                commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit 
-                                esse cillum dolore eu fugiat nulla pariatur. ."
-                            )
+topic_videos = ["Memoization optimization", "Two Number Sum Video", "C++ Video"]
+video_urls = [
+    "https://www.youtube.com/watch?v=oBt53YbR9Kk&t=5598s",
+    'https://www.youtube.com/watch?v=BoHO04xVeU0',
+    'https://www.youtube.com/watch?v=vLnPwxZdW4Y'
+    
+]
+embedded_videos = [
+    '<iframe width="560" height="315" src="https://www.youtube.com/embed/oBt53YbR9Kk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+    '<iframe width="560" height="315" src="https://www.youtube.com/embed/BoHO04xVeU0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+    '<iframe width="560" height="315" src="https://www.youtube.com/embed/vLnPwxZdW4Y" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
+]
+topic_videos.each.with_index(0) do |video_name, l|
+    topic = Video.create!(title: video_name, caption: "Video caption #{l + 1}", url: video_urls[l], topic_id: 1, embedded_video: embedded_videos[l] )
 end
