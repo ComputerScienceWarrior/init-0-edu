@@ -15,7 +15,7 @@ class Admin::VideosController < ApplicationController
     end
 
     def create
-        @video = Video.new(topic_params)
+        @video = Video.new(video_params)
         if @video.save
             redirect_to admin_course_topics_path(@video)
         else
@@ -36,8 +36,9 @@ class Admin::VideosController < ApplicationController
     end
 
     def destroy
+        topic = @video.topic
         @video.destroy
-        redirect_to admin_course_topics_path(@video)
+        redirect_to admin_topic_videos_path(topic)
     end
 
     private
