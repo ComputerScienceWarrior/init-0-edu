@@ -8,9 +8,8 @@ admin, they have access to the admin side of the web application. This grants a 
 for normal users to view and access. An admin has a specific set of dashboards that allow them to perform higher functions, 
 such as delete a user, delete comments, delete a course, and delete course topics.
 
-#User functionality
+# User Functionality
 
-``Using the Site``
 1) A user can sign up either through third party auth (Google), or a normal user signup form.
 2) Once signed up, a standard user can view various courses and topics available on the site.
 3) A user can comment on various course, and view all the content related to a course, such as comments and topics.
@@ -18,7 +17,7 @@ such as delete a user, delete comments, delete a course, and delete course topic
 5) If a user would like access to their accont, they must sign in via the Login Page.
 
 # Ruby Version
-2.6.1
+This project utilized Ruby version 2.6.1
 
 # Configuration and Database Information
 This web application works for all browsers and is configured using the Ruby on Rails framework paired with ActiveRecord.
