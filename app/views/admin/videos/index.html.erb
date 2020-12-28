@@ -1,14 +1,13 @@
 <h1>Videos</h1>
-<table>
+<table class="admin-tables">
         <thead>
-            <th>Video Title</th><th>caption</th><th>description</th><th>url</th>
+            <th>Video Title</th><th>Caption</th><th>Course Video</th>
         </thead>
     <tbody>
         <% @videos.each do |video| %>
             <td><%= link_to video.title %></td>
-            <td><%= link_to video.caption %></td>
-            <td><%= link_to video.description %></td>
-            <td><%= link_to video.url %></td>
+            <td><%= video.caption %></td>
+            <td><%= link_to "Memoization Video", video.url %></td>
         <% end %>
     </tbody>
 </table>
