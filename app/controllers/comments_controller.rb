@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
-    before_action :find_comment, only: [:show, :edit, :destroy]
+    before_action :find_comment, only: [:show, :edit, :update, :destroy]
     layout "dashboard"
 
     def index
