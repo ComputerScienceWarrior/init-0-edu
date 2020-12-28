@@ -10,11 +10,11 @@ such as delete a user, delete comments, delete a course, and delete course topic
 
 # User Functionality
 
-1) A user can sign up either through third party auth (Google), or a normal user signup form.
+1) A user can sign up either through third party auth (Google), or a normal user sign up form.
 2) Once signed up, a standard user can view various courses and topics available on the site.
 3) A user can comment on various course, and view all the content related to a course, such as comments and topics.
 4) Once finished, a user can sign out of their account.
-5) If a user would like access to their accont, they must sign in via the Login Page.
+5) If a user would like access to their account, they must sign in via the Login Page.
 
 # Ruby Version
 This project utilized Ruby version 2.6.1
