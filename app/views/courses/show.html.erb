@@ -4,10 +4,22 @@
 <%= @course.description %>
 <%= @course.duration %>
 <%= @course.rating %>
+
+<h1>Course Comments</h1>
+<hr>
 <% @course.comments.each do |comment| %>
     <div id="courses-comments-div">
-        <p><%= comment.content %><br></p>
-        <%= link_to comment.student.username, student_path(comment.student) %><br>
+        <%= link_to comment.student.username, student_path(comment.student) %>
+        <span class="separators">|</span>
+        <%= comment.content %><br>
+        <span class="separators">|</span>
+        <% if current_student.id == comment.student.id %>
+            <%= link_to "Edit Comment", edit_course_comment_path(comment.course, comment) %>
+            <span class="separators">|</span>
+            <%= link_to "Delete Comment" %>
+            <span class="separators"></span>
+        <% end %>
+        <br>
     </div>
 <% end %>
 <p><%= link_to "All Courses Topics", course_topics_path(@course) %></p>
