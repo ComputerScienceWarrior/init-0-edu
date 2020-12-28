@@ -6,7 +6,7 @@
     <tbody>
             <% @videos.each do |video| %>
                 <tr>
-                    <td><%= link_to video.title %></td>
+                    <td><%= link_to video.title, admin_topic_video_path(video.topic, video) %></td>
                     <td><%= video.caption %></td>
                     <td><%= link_to "Memoization Video", video.url %></td>
                     <td>
