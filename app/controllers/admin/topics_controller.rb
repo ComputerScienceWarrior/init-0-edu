@@ -36,6 +36,7 @@ class Admin::TopicsController < ApplicationController
     end
 
     def destroy
+        @topic.videos.destroy_all
         @topic.destroy
         redirect_to admin_course_topics_path(@course)
     end
