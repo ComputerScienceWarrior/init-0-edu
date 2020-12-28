@@ -40,7 +40,7 @@ class Admin::VideosController < ApplicationController
         @video.destroy
         redirect_to admin_topic_videos_path(topic)
     end
-
+ 
     private
 
     def video_params
