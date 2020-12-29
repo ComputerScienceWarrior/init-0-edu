@@ -40,7 +40,9 @@ Rails.application.routes.draw do
   delete '/courses/:id', to: 'courses#destroy'
 
   #################### TOPICS ROUTES ####################
-  resources :topics, only: [:index, :show]
+  resources :topics, only: [:index, :show] do 
+    resources :videos, only: [:index, :show]
+  end
 
   #################### COMMENTS ROUTES ####################
   resources :courses, only: [:index, :show] do 
