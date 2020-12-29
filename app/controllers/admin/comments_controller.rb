@@ -18,7 +18,7 @@ class Admin::CommentsController < ApplicationController
 
     def create
         @comment = Comment.create(comment_params)
-        if @comment.valid?
+        if @comment.save
             redirect_to admin_course_path(@comment.course)
         else
             render :new
