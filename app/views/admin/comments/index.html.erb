@@ -10,7 +10,12 @@
         <% @comments_by_course.each do |comment| %>
             <tr>
                 <td><%= link_to comment.course.title, admin_course_path(comment.course) %></td>
-                <td><%= link_to comment.student.username, admin_student_path(comment.student) %></td>
+                <% if current_student.id  == comment.student.id %>
+                    <td><%= link_to image_tag('edit-icon.png', width: '15px'), edit_admin_course_comment_path(comment.course, comment) %></td>
+                <% else %>
+                    <td><%= link_to comment.student.username, admin_student_path(comment.student) %></td>
+                <% end %>
+                
                 <td><%= comment.content %></td>
             </tr>
         <% end %>
