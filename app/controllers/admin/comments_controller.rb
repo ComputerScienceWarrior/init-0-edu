@@ -1,4 +1,5 @@
 class Admin::CommentsController < ApplicationController
+    before_action :find_comment, only: [:index, :show, :edit, :destroy]
     before_action :require_admin
     layout "admin"
 
@@ -17,7 +18,7 @@ class Admin::CommentsController < ApplicationController
 
     def create
         @comment = Comment.create(comment_params)
-        if @comment
+        if @comment.valid?
             redirect_to admin_course_path(@comment.course)
         else
             render :new
