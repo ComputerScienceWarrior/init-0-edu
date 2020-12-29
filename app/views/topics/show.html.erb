@@ -4,4 +4,5 @@
 <p>
     <h2>Title: <%= @topic.title %></h2>
     <h3>Description: <%= @topic.description %></h3>
+    <p><%= link_to "Topic Videos", topic_videos_path(@topic) %></p>
 </p> 
