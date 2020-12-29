@@ -44,7 +44,7 @@ class Admin::VideosController < ApplicationController
     private
 
     def video_params
-        params.require(:video).permit(:title, :caption, :url, :course_id)
+        params.require(:video).permit(:title, :caption, :url, :topic_id)
     end
 
     def find_video
