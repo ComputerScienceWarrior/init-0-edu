@@ -1,6 +1,6 @@
 <h2>Create your new course and topic!</h2>
 <div id="course-and-topic-form">
-    <%= form_for(:course, url: admin_courses_path) do |f| %>
+    <%= form_for(@course, url: admin_courses_path) do |f| %>
         <% @course.errors.full_messages.each do |msg| %>
             <li class="errors"><%= msg %></li>
         <% end %>
