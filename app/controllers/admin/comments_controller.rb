@@ -30,7 +30,7 @@ class Admin::CommentsController < ApplicationController
 
     def update
         @comment.update(comment_params)
-        if @comment
+        if @comment.valid?
             redirect_to admin_course_path(@comment.course)
         else
             render :edit
