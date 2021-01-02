@@ -1,5 +1,5 @@
 class Admin::CommentsController < ApplicationController
-    before_action :find_comment, only: [:index, :show, :edit, :destroy]
+    before_action :find_comment, only: [:index]
     before_action :require_admin
     layout "admin"
 
@@ -7,41 +7,6 @@ class Admin::CommentsController < ApplicationController
         @students = Student.all
         @comments_by_student = Comment.by_student(params[:student_id])
         @comments_by_course = Comment.by_course(params[:course_id])
-    end
-
-    def show
-    end
-
-    def new
-        @comment = Comment.new
-    end
-
-    def create
-        @comment = Comment.create(comment_params)
-        if @comment.save
-            redirect_to admin_course_path(@comment.course)
-        else
-            render :new
-        end
-    end
-
-    def edit
-    end
-
-    def update
-        @comment.update(comment_params)
-        if @comment.valid?
-            redirect_to admin_course_path(@comment.course)
-        else
-            render :edit
-        end
-    end
-
-    def destroy
-        @comment = Comment.find(params[:id])
-        @course = Course.find(session[:course_id])
-        @comment.destroy
-        redirect_to admin_course_path(@course)
     end
 
     private
