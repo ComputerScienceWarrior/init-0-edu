@@ -20,7 +20,6 @@ Rails.application.routes.draw do
   end
   get "admin/topics/by_course/:course_id", to: "admin/topics#index", as: "admin_topics_by_course"
   get "/admin/courses/:course_id/topics/new", to: "admin/topics#new"
-  post "admin/courses/:course_id/comments/new", to: "admin/comments#create"
   
   
   #################### STUDENT ROUTES ####################
