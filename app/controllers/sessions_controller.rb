@@ -13,7 +13,8 @@ class SessionsController < ApplicationController
                 redirect_to student_path(@student)
             end
         else
-            redirect_to login_path
+            flash[:alert] = "User not found!"
+            render :new
         end
     end
 
