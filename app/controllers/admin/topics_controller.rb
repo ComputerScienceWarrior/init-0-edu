@@ -16,6 +16,7 @@ class Admin::TopicsController < ApplicationController
 
     def create
         @topic = Topic.new(topic_params)
+        @topic.course_id = params[:course_id]
         if @topic.save
             redirect_to admin_course_topics_path(@topic.course)
         else
