@@ -1,5 +1,5 @@
 class Course < ApplicationRecord
-    has_many :topics
+    has_many :topics, :inverse_of => :course
     accepts_nested_attributes_for :topics
     has_many :students
     has_many :comments
