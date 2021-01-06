@@ -18,7 +18,6 @@ class Admin::CoursesController < ApplicationController
     def create
         @course = Course.new(course_params)
         if @course.save
-            @topic = Topic.create(title: params[:course][:topics][:title], description: params[:course][:topics][:description], course_id: @course.id)
             redirect_to admin_course_path(@course)
         else
             render :new
@@ -51,7 +50,7 @@ class Admin::CoursesController < ApplicationController
     private
 
     def course_params
-        params.require(:course).permit(:title, :description, :duration, :rating, topics_attributes: [:title, :description, :course_id])
+        params.require(:course).permit(:title, :description, :duration, :rating, topics_attributes: [:title, :description])
     end
 
     def find_course
