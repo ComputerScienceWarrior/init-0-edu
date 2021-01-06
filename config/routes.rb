@@ -23,10 +23,9 @@ Rails.application.routes.draw do
   
   
   #################### STUDENT ROUTES ####################
-  resources :students, only: [:show, :new, :create, :edit, :update] 
+  resources :students, only: [:show, :create, :edit, :update] 
   get "/signup", to: "students#new"
   post "signup", to: "students#new"
-  delete '/students/:id', to: 'students#destroy'
 
   resources :students do
     resources :comments, only: [:index, :new, :edit]
@@ -39,7 +38,7 @@ Rails.application.routes.draw do
   delete '/courses/:id', to: 'courses#destroy'
 
   #################### TOPICS ROUTES ####################
-  resources :topics, only: [:index, :show] do 
+  resources :topics, only: [:index, :create, :show] do 
     resources :videos, only: [:index, :show]
   end
 
