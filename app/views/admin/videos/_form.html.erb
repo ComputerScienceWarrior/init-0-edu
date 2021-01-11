@@ -1,0 +1,6 @@
+<%= form_for @video do |f| %>
+    <%= f.text_field :title, placeholder: "Enter a title for the video" %>
+    <%= f.text_field :caption, placeholder: "Enter a caption for your video" %>
+    <%= f.text_field :url "Enter video url to upload video" %>
+    <%= f.submit %>
+<% end %>
