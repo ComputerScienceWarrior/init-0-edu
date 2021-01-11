@@ -17,7 +17,7 @@ class Admin::VideosController < ApplicationController
     def create
         @video = Video.new(video_params)
         if @video.save
-            redirect_to admin_course_topics_path(@video)
+            redirect_to admin_topic_path(@video.topic)
         else
             render :new
         end
@@ -29,7 +29,7 @@ class Admin::VideosController < ApplicationController
     def update
         @video.update(video_params)
         if @video.valid?
-            redirect_to admin_topic_path(@video)
+            redirect_to admin_topic_path(@video.topic)
         else
             render :edit
         end
