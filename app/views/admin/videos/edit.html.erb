@@ -1,1 +1,10 @@
 <h1>Edit your video</h1>
+<%= form_for :video, url: admin_topic_video_path(@video.topic, @video), method: :patch do |f| %>
+    <% @video.errors.full_messages.each do |msg| %>
+        <li class="errors"><%= msg %></li>
+    <% end %> 
+    <%= f.text_field :title, placeholder: "Enter a title for the video" %><br><br>
+    <%= f.text_field :caption, placeholder: "Enter a caption for your video" %><br><br>
+    <%= f.text_field :url, placeholder: "Enter video url to upload video" %><br><br>
+    <%= f.submit %>
+<% end %>
