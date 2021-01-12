@@ -1,8 +1,0 @@
-<%= form_for :topic do |f| %>
-    <% @topic.errors.full_messages.each do |msg| %>
-        <li class="errors"><%= msg %></li>
-    <% end %> 
-    Title of Topic:<%= f.text_field :title %><br><br>
-    Description:<%= f.text_area :description %><br><br>
-    <%= f.submit %>
-<% end %>
