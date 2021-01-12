@@ -16,6 +16,7 @@ class Admin::VideosController < ApplicationController
 
     def create
         @video = Video.new(video_params)
+        @video.topic_id = params[:topic_id]
         if @video.save
             redirect_to admin_topic_path(@video.topic)
         else
