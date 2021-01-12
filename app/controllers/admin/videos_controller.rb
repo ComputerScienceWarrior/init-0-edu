@@ -4,7 +4,7 @@ class Admin::VideosController < ApplicationController
     layout "admin"
 
     def index
-        @videos = Video.all
+        @videos = Video.by_topic(params[:topic_id])
     end
 
     def show
