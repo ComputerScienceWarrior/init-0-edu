@@ -15,6 +15,7 @@ Rails.application.routes.draw do
     end
     resources :topics do 
       resources :videos 
+      post "/videos/new", to: "videos#create"
     end
     
   end
