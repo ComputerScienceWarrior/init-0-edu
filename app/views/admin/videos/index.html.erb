@@ -1,13 +1,16 @@
 <h1>Videos</h1>
+
 <table class="admin-tables">
         <thead>
-            <th>Video Page</th><th>Caption</th><th>Delete Video</th>
+            <th>Video Page</th><th>Caption</th><th>Add topic Video</th><th>Edit Video</th><th>Delete Video</th>
         </thead>
     <tbody>
             <% @videos.each do |video| %>
                 <tr>
                     <td><%= link_to video.title, admin_topic_video_path(video.topic, video) %></td>
                     <td><%= video.caption %></td>
+                    <td><%= link_to image_tag("plus-icon.png", width: '25px'), new_admin_topic_video_path(video.topic) %></td>
+                    <td><%= link_to image_tag("edit-icon.png", width: '25px'), edit_admin_topic_video_path(video.topic, video) %></td>
                     <td>
                         <%= form_tag admin_topic_video_path(video.topic, video), method: "delete" do %>
                             <%= link_to image_tag("trash.png", width: '25px'), admin_topic_video_path(video.topic, video), method: "delete", id: "delete-video-button", data: {confirm: "Are you sure?"}%>
