@@ -16,8 +16,7 @@ class CommentsController < ApplicationController
 
     def create
         @comment = Comment.new(comment_params)
-        if @comment.valid?
-            @comment = Comment.create(comment_params)
+        if @comment.save
             redirect_to course_path(@comment.course)
         else
             render :new
